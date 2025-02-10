@@ -56,9 +56,9 @@ async function copyHTMLFiles(srcDir: string, distDir: string) {
       htmlContent = htmlContent
       .replace(/\.scss/g, '.css')
       .replace(/\.\/scss\//g, './css/')
-      htmlContent = htmlContent
-      .replace(/\.ts/g, '.js')
-      .replace(/\.\/ts\//g, './js/')
+      // htmlContent = htmlContent
+      // .replace(/\.ts/g, '.js')
+      // .replace(/\.\/ts\//g, './js/')
       // added this concatted script to make sure that if we linked to ts it will replace with JS and read from the correct folder
       await Bun.write(destPath, htmlContent);
   // await Bun.write(destPath, Bun.file(file));
@@ -79,12 +79,12 @@ export async function buildProject() {
       await $`mkdir -p ${distDir}`;
     }
 
-    const allSrcFiles = await getAllFiles(srcDir);
-    const entrypoints = allSrcFiles.filter(file =>
-      file.startsWith(join(srcDir, "ts")) && (file.endsWith(".ts") || file.endsWith(".js"))
-    );
+    // const allSrcFiles = await getAllFiles(srcDir);
+    // const entrypoints = allSrcFiles.filter(file =>
+    //   file.startsWith(join(srcDir, "ts")) && (file.endsWith(".ts") || file.endsWith(".js"))
+    // );
     
-    console.log("Entrypoints:", entrypoints);
+    // console.log("Entrypoints:", entrypoints);
     // await build({
     //   entrypoints,
     //   outdir: distDir,
@@ -102,7 +102,8 @@ export async function buildProject() {
     await transformAssets(`./assets`, `${distDir}/assets`);
 
     console.log("Starting JavaScript transformation...");
-    await transformJS(`${srcDir}/ts`, `${distDir}/js`);
+    // await transformJS(`${srcDir}/ts`, `${distDir}/js`);
+    await transformJS(`${srcDir}/ts`, `${distDir}/js`).catch(console.error);
 
     console.log("Starting CSS/SCSS transformation...");
     await transformCSS(`${srcDir}/scss`, `${distDir}/css`);
