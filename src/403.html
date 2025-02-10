@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta property="og:locale" content="en_US">
+    <meta property="og:url" content="http://colorincode.me">
+    <meta property="og:site_name" content="Color In Code | Web Development and Graphic Design">
+    <title> Error 403 | Color In Code </title>
+    <meta name="description" content="Color In Code error page.">
+    <link rel="stylesheet" href="https://use.typekit.net/vyz7xic.css">
+    <link rel="stylesheet" href="https://use.typekit.net/piq5ctv.css">
+    <link rel="stylesheet" href="https://use.typekit.net/tyj0gxm.css">
+    <link rel="stylesheet" href="./scss/404-page.scss">
+</head>
+
+<body>
+    <include src="navbar.html" ></include>
+    <section class="section-wrapper-404">
+        <div class="doubled-continue-wrapper">
+            <div class="text-continue">INSERT COIN</div>
+            <div class="text-continue-double">INSERT COIN</div>
+            <div id="coinBox">
+                <div id="coin"></div>
+            </div>
+        </div>
+        <div class="doubled-404-wrapper">
+            <h3 class="text-404">This does not look right.</h3>
+            <br/>
+            <h5 class="text-404-double">Error 402/403</h5>
+        </div>
+        <div class="btn-flex_wrapper">
+            <a class="base-btn-atag" href="https://colorincode.me?" target="_blank"><button class="large-btn-desktop square-btn medium-btn-mobile button-404">TRY AGAIN? Return to Color in Code</button></a>
+        </div>
+    </section>
+    <script src="https://kit.fontawesome.com/e56bb8c3d5.js" crossorigin="anonymous"></script>
+    <script>
+    var coin = document.getElementById("coin");
+        function flip() {
+            var frameNumber = 1;
+            var frameSwitch = setInterval(function() {
+                if (frameNumber > 8) frameNumber = 1;
+                else {
+                    coin.className = "coinBoxFrame" + frameNumber;
+                    frameNumber++;
+                }
+            }, 100);
+        }
+        flip();
+</script>
+</body>
+
+</html>

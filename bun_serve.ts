@@ -41,7 +41,7 @@ async function startServer() {
     async fetch(req) {
       const url = new URL(req.url);
       let filePath = join("./dist", url.pathname);
-
+      //serve the index as the default from dist 
       if (url.pathname === '/' || url.pathname === '/index.html') {
         filePath = join("./dist", 'index.html');
       }
@@ -72,34 +72,34 @@ async function startServer() {
   console.log(`Server running at http://localhost:${port}`);
   return server;
 }
-async function debouncedBuild() {
-  if (buildTimeout) {
-    clearTimeout(buildTimeout);
-  }
-  buildTimeout = setTimeout(async () => {
-    if (!isBuilding) {
-      isBuilding = true;
-      console.log("Starting build...");
-      await buildProject();
-      isBuilding = false;
-      clients.forEach(client => client.send("reload"));
-    }
-  }, 1000) as DisposableTimer; // 1 second debounce
+// async function debouncedBuild() {
+//   if (buildTimeout) {
+//     clearTimeout(buildTimeout);
+//   }
+//   buildTimeout = setTimeout(async () => {
+//     if (!isBuilding) {
+//       isBuilding = true;
+//       console.log("Starting build...");
+//       await buildProject();
+//       isBuilding = false;
+//       clients.forEach(client => client.send("reload"));
+//     }
+//   }, 1000) as DisposableTimer; // 1 second debounce
   
-}
+// }
 
-async function watchAndRebuild() {
-  watch("./src", { recursive: true }, async (event, filename) => {
-    console.log(`File changed: ${filename}`);
-    await debouncedBuild();
-  });
-}
+// async function watchAndRebuild() {
+//   watch("./src", { recursive: true }, async (event, filename) => {
+//     console.log(`File changed: ${filename}`);
+//     await debouncedBuild();
+//   });
+// }
 
 
 async function main() {
   await buildProject();
   await startServer();
-  await watchAndRebuild();
+  // await watchAndRebuild();
 }
 
 main().catch(console.error);

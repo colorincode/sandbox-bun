@@ -15,9 +15,9 @@ try {
     console.error("Error during build:", error);
   }
   
-  const watcher = chokidar.watch("./src/scss", { persistent: true });
+//   const watcher = chokidar.watch("./src/scss", { persistent: true });
 
-  watcher.on("change", async (path) => {
-    console.log(`File changed: ${path}`);
-    await transformCSS("./src/scss", "./dist/css");
-  });
+//   watcher.on("change", async (path) => {
+//     console.log(`File changed: ${path}`);
+//     await transformCSS("./src/scss", "./dist/css");
+//   });

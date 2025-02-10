@@ -68,6 +68,7 @@ export async function transformCSS(inputDir: string, outputDir: string) {
             sourceMap: false,
           });
           cssContent = result.css;
+          
         } else {
           cssContent = await Bun.file(inputPath).text();
         }

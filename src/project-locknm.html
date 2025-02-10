@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- meta data-->
+    <meta charset="utf-8">
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="website" />
+    <title> Lock NM | Portfolio | Color In Code </title>
+    <meta name="description" content="Color In Code is a full service web development company serving small, medium, enterprise business; project page for Lock NM.">
+    <meta property="keywords" content="color in code, web developer, web design, web designer, locksmith, small business, mobile friendly locksmith site, mobile friendly web design, small business website portfolio, service industry website, simple website">
+    <meta property="og:title" content="Color in Code Portfolio: Lock NM." />
+    <meta property="og:description" content="Color In Code is a full service web development company serving small, medium, enterprise business; project page for susa ventures." />
+    <meta property="og:url" content="http://colorincode.me" />
+    <meta property="og:site_name" content="Color In Code | Portfolio | Web Development and Graphic Design" />
+    <meta name="geo.region" content="United States (US)" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="canonical" href="https://colorincode.me/portfolio/project-locknm.html" />
+    <link rel="icon" href="https://colorincode.me/favicon.ico" sizes="any">
+    <link rel="icon" href="https://colorincode.me/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="https://colorincode.me/icon.png">
+    <link rel="icon" type="image/png" href="https://colorincode.me/favicon-96x96.png" sizes="96x96" />
+    <meta name="apple-mobile-web-app-title" content="Color in Code" />
+    <link rel="manifest" href="https://colorincode.me/webmanifest.json" />
+    <meta property="og:image" content="https://colorincode.me/assets/hexagon-background-dark.jpg" />
+    <meta property="og:image:width" content="1920" />
+    <meta property="og:image:height" content="1080" />
+    <meta property="og:image:type" content="image/jpg" />
+    <!-- sitewide font call-->
+    <link rel="stylesheet" href="https://use.typekit.net/vyz7xic.css">
+    <link rel="stylesheet" href="https://use.typekit.net/piq5ctv.css">
+    <script src="https://kit.fontawesome.com/e56bb8c3d5.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./scss/locknm.css">
+    <link rel="stylesheet" href="./scss/style.scss">
+    <script type="module" src="./ts/app.ts" defer></script>
+</head>
+<body>
+    <!-- end header inject -->
+    <include src="partial_globalheader.html" ></include>
+    <include src="navbar.html" ></include>
+    <!-- end header inject -->
+
+    <!-- slide in -->
+    <div class="project-info-overflow-container">
+        <div class="project-info-overlay__wrapper">
+            <div class="project-info__inner">
+                    <div class="overlay--pagelink__wrapper">
+                        <a href="/portfolio" class="overlay--pagelinks">Portfolio Home</a>
+                        <span class="overlay--pagelinks">&nbsp;|&nbsp;</span>
+                        <a href="/portfolio/webdevelopment.html" id="slideInThingyColor" class="overlay--pagelinks cic--green-text" style="color: #1166A5">Web Development</a>
+                    </div>
+                    <div class="text-hexagon-h1" style="color:#1166A5">Project:</div>
+                    <div class="text-hexagon-p" style="color:#FFF">Lock NM</div>
+                    <div class="text-hexagon-h1" style="color:#1166A5">Roles:</div>
+                    <div class="text-hexagon-p" style="color:#FFF">Lead Engineer</div>
+                    <div class="text-hexagon-h1" style="color:#1166A5">Stack:</div>
+                    <div class="text-hexagon-p" style="color:#FFF">HTML/CSS/JS</div>
+                <div class="fa--arrow__wrapper"><i class="fa-light fa-angle-left fa-fw fa-dropdown--arrow"></i></div>
+            </div>
+            <script>document.addEventListener("DOMContentLoaded",(function(){const e=document.querySelector(".project-info-overlay__wrapper"),s=document.querySelector(".fa-dropdown--arrow");e.classList.add("slide-in"),e.classList.add("expanded"),setTimeout((()=>{e.classList.remove("slide-in"),e.classList.add("slide-out"),e.classList.remove("expanded")}),3e3),s.addEventListener("click",(()=>{e.classList.toggle("expanded"),e.classList.contains("expanded")?(e.classList.remove("slide-out"),e.classList.add("slide-in")):(e.classList.remove("slide-in"),e.classList.add("slide-out"))}))}));</script>
+        </div>
+    </div>
+    <!-- slide in -->
+
+    <section class="navbar__wrapper">
+
+        <div class="contact__wrapper">
+            <a id="mapLink" class="shop__wrapper" href="" target="blank">
+                <div class="naviocon--wrapper">
+                    <i class="fa-solid fa-map-location-dot nav-icons"></i>
+                </div>
+                <script>
+                    function getDeviceType() {
+                        const ua = navigator.userAgent;
+                        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(ua)) {
+                        return "mobile";
+                        }
+                        return "desktop";
+                    };
+
+                    let url;
+                    function navFunc(){
+                    const deviceType = getDeviceType();
+                    if(deviceType === "mobile") {
+                        if( (navigator.platform.indexOf("iPhone") != -1) || (navigator.platform.indexOf("iPod") != -1) || (navigator.platform.indexOf("iPad") != -1)) {
+                            url = "//maps.apple.com/?ll=35.0605652542341,-106.18886214683633&q=New+Mexico+Locking+Systems";
+                        } else {
+                            url = "geo:0,0?q=35.0605652542341,-106.18886214683633(New+Mexico+Locking+Systems)";
+                        }
+                    } else {
+                        url = "http://www.bing.com/maps/default.aspx?rtp=~pos.35.060559_-106.188590_New+Mexico%20Locking+Systems";
+                    }
+                    document.getElementById('mapLink').setAttribute('href', url);
+                    };
+                    navFunc();
+                </script>
+            </a>
+            <!-- <h3 class="nav--text">1945 Old Route 66 Suite D, Edgewood, NM 87015</h3> -->
+            <a class="call__wrapper" href="tel: 1-505-832-9740" target="_self">
+                <div class="naviocon--wrapper">
+                    <i id="insertPhone" class="fa-solid fa-phone nav-icons"></i>
+                </div>
+                <script>
+                    function getDeviceTypePN() {
+                        const ua = navigator.userAgent;
+                        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(ua)) {
+                            return "mobile";
+                        }
+                        return "desktop";
+                    }
+
+                    function desktopMobileCall() {
+                        const deviceType = getDeviceTypePN();
+
+                        if (deviceType === "desktop") {
+                            const callWrapper = document.querySelector('.call__wrapper');
+
+                            if (callWrapper) {
+                                let toggleState = false;
+
+                                callWrapper.addEventListener('click', function(event) {
+                                    event.preventDefault();
+                                    const phoneNumber = '505-832-9740';
+
+                                    if (!toggleState) {
+                                        callWrapper.insertAdjacentHTML('afterend', `<div class="navphoneDT--wrapper"><span class="desktop--phone--visible">${phoneNumber}</span></div>`);
+                                        toggleState = true;
+                                    } else {
+                                        const phoneElement = document.querySelector('.navphoneDT--wrapper');
+                                        if (phoneElement) {
+                                            phoneElement.remove();
+                                            toggleState = false;
+                                        }
+                                    }
+                                });
+                            }
+                        }
+                    };
+                    desktopMobileCall();
+                </script>
+            </a>
+        </div>
+
+    </section>
+
+    <section class="two--section__grid">
+        <div class="left--side__wrapper">
+            <div class="logo--img"></div>
+            <h1>NEW MEXICO LOCKING SYSTEMS</h1>
+            <p class="margin--reset">(505) 832-9740</p>
+            <p class="margin--reset">1945 Old Route 66 Suite D, Edgewood, NM 87015</p>
+            <p class="hero--h2">New Mexico Locking Systems has been locking and unlocking New Mexico for 
+                <span id="openCounter">
+                    <script>
+                        let openingYear = 2008;
+                        let currentYear = new Date().getFullYear();
+                        let yearsOpen = currentYear - openingYear;
+                        let el = document.getElementById('openCounter'); 
+                        el.appendChild(document.createTextNode(yearsOpen));
+                    </script>
+                </span>
+                 years. Your asset protection, loss prevention specialist!</p>
+        </div>
+        <img class="storefront--img" src="./assets/locknm-storefront.jpg" alt="">
+    </section>
+    <section class="textblock__wrapper">
+
+        <h1>Give us a call or stop by!</h1>
+        <p>We love our customers, so feel free to visit during normal business hours.</p>
+        <p>Our physical location is around the corner from Farmers Insurance, facing east toward O'Reilly Auto Parts.</p>
+
+        <h1>Hours</h1>
+        <table class="hours-table">
+            <tr><td>Mon</td><td>08:00 am - 05:00 pm</td></tr>
+            <tr><td>Tue</td><td>08:00 am - 05:00 pm</td></tr>
+            <tr><td>Wed</td><td>08:00 am - 05:00 pm</td></tr>
+            <tr><td>Thu</td><td>08:00 am - 05:00 pm</td></tr>
+            <tr><td>Fri</td><td class="closed">Closed</td></tr>
+            <tr><td>Sat</td><td class="closed">Closed</td></tr>
+            <tr><td>Sun</td><td class="closed">Closed</td></tr>
+        </table>
+
+        <p class="text--constrain">As a family-owned and operated business, hours may vary with school and family obligations, but we will be as consistent as possible.  We may also close the shop due to inclement weather.  Look for up-to-date hours on Bing Maps or Yelp.</p>
+
+    </section>
+
+    <section class="fakemap_wrapper">
+    </section>
+
+    <section class="textblock__wrapper section--split">
+        <h1 style="margin: 0 auto; padding: 40px 0;">DEPENDABLE LOCKSMITH EXPERTS</h1>
+    </section>
+    <section class="two--section__grid">
+        <img class="closeup--keys" src="./assets/locknm-closup-keys.webp" alt="">
+        <div class="right--side__wrapper">
+            <h1 class="align--text--left">Commercial</h1>
+            <p class="align--text--left">At NMLS we specialize in commercial locksmithing.  Protecting your business is our first concern.</p>
+            <ul class="ul--services">
+                <li>Master key systems</li>
+                <li>Interchangeable core systems</li>
+                <li>Re-key/no key</li>
+                <li>Deadbolt Installation</li>
+                <li>Latch gard installation</li>
+                <li>Door closer installation and adjustments</li>
+                <li>High security keyways</li>
+                <li>Key control</li>
+                <li>Loss prevention</li>
+                <li>Asset protection</li>
+                <li>Panic devices "crash bars"</li>
+                <li>Stand alone access control</li>
+                <li>Grade 1 Locksets</li>
+                <li>ADA compliant levers</li>
+                <li>Lock upgrades</li>
+                <li>Safe deposit boxes opened/replaced</li>
+                <li>Safe combination changes</li>
+                <li>Safe sales</li>
+                <li>Safes opened and repaired</li>
+            </ul>
+        </div>
+    </section>
+    <section class="two--section__grid">
+        <div class="left--z--section__wrapper">
+            <h1 class="align--text--left">Residential</h1>
+            <ul class="ul--services">
+                <li>Lock upgrades</li>
+                <li>Lock repairs</li>
+                <li>Deadbolts & doorknobs</li>
+                <li>Mortise lock repair</li>
+                <li>Re-keys</li>
+                <li>Open lock-outs</li>
+                <li>Safe sales and service</li>
+            </ul>
+        </div>
+        <img class="house--key--img" src="./assets/locknm-man-holding-key.webp" alt="">
+    </section>
+    <section class="two--section__grid">
+        <img class="signage--img" src="./assets/locknm-signage.webp" alt="">
+        <div class="right--side__wrapper">
+            <h1 class="align--text--left">The Shop in Edgewood</h1>
+            <p class="align--text--left">FOR ALL YOUR WALK-IN NEEDS<br>Keys - residential, commercial and automotive<br>Key and lock accessories</p>
+        </div>
+    </section>
+
+    <footer class="footer__wrapper">
+        <div>
+            <p class="footer__text">Copyright&nbsp;&copy;&nbsp;
+            <span id="copyYear"><script>document.getElementById('copyYear').appendChild(document.createTextNode(new Date().getFullYear()));</script></span>
+            <a class="website--links" href="https://locknm.com">New&nbsp;Mexico&nbsp;Locking&nbsp;Systems</a>&nbsp;|&nbsp;<a class="website--links" href="https://colorincode.me" target="blank">Color&nbsp;In&nbsp;Code</a></p>
+        </div>
+        <p class="footer__text">All Rights Reserved.</p>
+    </footer>
+
+    <include src="partial_globalfooter.html" ></include>
+    <script src="https://kit.fontawesome.com/72835a3cb5.js" crossorigin="anonymous"></script>
+</body>
+    
+</html>

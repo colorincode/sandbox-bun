@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- meta data-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title> Portfolio | Color in Code</title>
+    <meta name="description" content="Color In Code is a full service web design and development company serving small, medium, enterprise business; portfolio and past work examples page.">
+    <meta name="keywords" content="color in code, web developer, website examples, website samples, website dev, web dev, digital portfolio, portfolio showcase, web design portfolio, creative web solutions, web development projects, development portfolio, professional web developers, web design agency, portfolio website">
+    <meta name="geo.region" content="United States (US)" />
+    <link rel="canonical" href="https://colorincode.me/portfolio/index.html" />
+    <link rel="manifest" href="https://colorincode.me/webmanifest.json" />
+    <link rel="icon" href="https://colorincode.me/favicon.ico" sizes="any">
+    <link rel="icon" href="https://colorincode.me/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="icon.png">
+    <link rel="icon" type="image/png" href="https://colorincode.me/favicon-96x96.png" sizes="96x96" />
+    <meta name="apple-mobile-web-app-title" content="Color in Code: Portfolio" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Color in Code Portfolio: Portfolio." />
+    <meta property="og:description" content="Color In Code is a full service web development company serving small, medium, enterprise business; portfolio and past work examples page." />
+    <meta property="og:url" content="http://colorincode.me" />
+    <meta property="og:site_name" content="Color In Code | Web Development and Graphic Design" />
+    <meta property="og:image" content="https://colorincode.me/assets/hexagon-background-dark.jpg" />
+    <meta property="og:image:width" content="1920" />
+    <meta property="og:image:height" content="1080" />
+    <meta property="og:image:type" content="image/jpg" />
+    <!-- sitewide font call-->
+    <link rel="stylesheet" href="https://use.typekit.net/vyz7xic.css">
+    <link rel="stylesheet" href="https://use.typekit.net/piq5ctv.css">
+    <script src="https://kit.fontawesome.com/e56bb8c3d5.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="./scss/portfoliomain.scss" />
+    <!-- <link rel="stylesheet" href="./scss/portfoliogrid.scss" /> -->
+    <link rel="stylesheet" href="./scss/colorincoderevealtheme.scss" />
+    <!-- <link rel="stylesheet" href="./scss/home.scss" /> -->
+    <!--main stylesheet call-->
+    <link rel="stylesheet" href="./scss/style.scss" />
+    <!-- main JS call, JS here will bubble make sure if superceding JS exists it goes at bottom -->
+    <script type="module" src="./ts/app.ts"></script>
+    <!-- <script type="module" src="./ts/scrollmodules.ts" defer></script>-->
+    <script type="module" src="./ts/portfoliohome.ts"></script>
+    <!-- <script type="module" src="./ts/portfoliopages.ts"></script> -->
+</head>
+
+<body class="homepage">
+<!-- begin header inject -->
+<include src="partial_globalheader.html" ></include>
+<include src="navbar.html" ></include>
+<!-- end header inject -->
+
+<!--start lead section-->
+<div class="slide-in-thingy_wrapper">
+    <div class="slide-in-thingy-text_wrapper">
+        <a href="#" class="slide-in-thingy-text">Color In Code</a>
+        <p class="slide-in-thingy-text">&nbsp;|&nbsp;</p>
+        <a href="#" id="slideInThingyColor" class="slide-in-thingy-text" style="color: var(--fluorescent-blue);">Portfolio Home</a>
+    </div>
+</div>
+<!-- end lead section-->
+
+<!--loader inject-->
+<canvas id="loader" ></canvas>
+<div id="loader--text--container" style="display: flex; align-items: center; justify-content: center; position: absolute; top: 0; left: 0; width: 100%; height: 100%; text-align: center; font-family: rift, sans-serif; font-size: 2.5rem; font-style: normal; font-weight: 800; ">
+    <h1 id="loader--text" class="loader--h1">LOADING...</h1> 
+    <h1 style="position: absolute; transform: translate(-2px, -2px); color: #e9e7e7;" class="loader--h1">LOADING...</h1>
+</div>
+<!-- end loader inject-->
+<section class="portfoliohomepagegrid__wrapper" id="content-container-one">
+                    <div class="intro-slide-wrapper">
+                        <h3 class="page-titles intro-slide-title" style="color: var(--fluorescent-blue);">Color in Code <span class="pagenameswap">Portfolio</span></h3>
+                        <p class="intro-slide-section-title sub-section-titles">Click or tap any hexagon to jump to a specific project category below.</p>
+                    </div>
+                    <div class="ccportfoliohome__grid">
+                        <div class="hex--item" tabindex="1">
+                            <div class="ccportfoliohome__box">
+                                <div class="ccportfoliohome__grid--hexagon">
+                                        <div class="ccportfoliohome__grid--img" style='background: url("./assets/2-hexagon-slide.png");' height="300px" width="300px"></div>
+                                        <div class="ccportfoliohome__grid--innercontainer">
+                                            <a href="./webdevelopment.html" class="ccportfoliohome__grid--link">
+                                                <h2 class="project--desc webdev-slide-title">Web Dev</h2>
+                                            </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hex--item" tabindex="2">
+                            <div class="ccportfoliohome__box">
+                                <div class="ccportfoliohome__grid--hexagon">
+                                    <div class="ccportfoliohome__grid--img" style='background-image: url("./assets/3-hexagon-slide-prod.png");' height="300px" width="300px"></div>
+                                    <div class="ccportfoliohome__grid--innercontainer">
+                                        <a href="./design.html" class="ccportfoliohome__grid--link">
+                                            <h2 class="project--desc design-slide-title">Design: Coming Soon</h2>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hex--item" tabindex="3">
+                            <div class="ccportfoliohome__box">
+                                <div class="ccportfoliohome__grid--hexagon">
+                                    <div class="ccportfoliohome__grid--img" style='background-image: url("./assets/4-hexagon-slide.png");' height="300px" width="300px"></div>
+                                    <div class="ccportfoliohome__grid--innercontainer">
+                                        <a href="#caseStudies" class="ccportfoliohome__grid--link">
+                                            <h2 class="project--desc casestudies-slide-title">Case Studies: Coming Soon</h2>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hex--item" tabindex="4">
+                            <div class="ccportfoliohome__box">
+                                <div class="ccportfoliohome__grid--hexagon">
+                                    <div class="ccportfoliohome__grid--img" style='background-image: url("./assets/5-hexagon-slide.png");' height="300px" width="300px"></div>
+                                    <div class="ccportfoliohome__grid--innercontainer">
+                                        <a href="#marketingConsulting" class="ccportfoliohome__grid--link">
+                                            <h2 class="project--desc marketingconsulting-slide-title">Marketing: Coming Soon</h2>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hex--item" tabindex="5">
+                            <div class="ccportfoliohome__box">
+                                <div class="ccportfoliohome__grid--hexagon">
+                                        <div class="ccportfoliohome__grid--img" style='background: url("./assets/7-hexagon-slide.png");' height="300px" width="300px"></div>
+                                            <div class="ccportfoliohome__grid--innercontainer">
+                                                <a href="./code-samples.html" class="ccportfoliohome__grid--link">
+                                                    <h2 class="project--desc codesamples-slide-title">Code Samples</h2>
+                                                </a>
+                                            </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hex--item" tabindex="6">
+                            <div class="ccportfoliohome__box">
+                                <div class="ccportfoliohome__grid--hexagon">
+                                    <div class="ccportfoliohome__grid--img" style='background-image: url("./assets/6-hexagon-slide.png");' height="300px" width="300px"></div>
+                                    <div class="ccportfoliohome__grid--innercontainer">
+                                        <a href="./aiexperimentlab.html" class="ccportfoliohome__grid--link">
+                                            <h2 class="project--desc ailab-slide-title">Ai Experiment Lab</h2>
+                                        </a>
+                                    </div>
+                           
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hex--item" tabindex="7">
+                            <div class="ccportfoliohome__box">
+                                <div class="ccportfoliohome__grid--hexagon">
+                                    <div class="ccportfoliohome__grid--img" style='background-image: url("./assets/8-hexagon-slide.png");' height="300px" width="300px"></div>
+                                    <div class="ccportfoliohome__grid--innercontainer">
+                                        <a href="./email-samples.html" class="ccportfoliohome__grid--link">
+                                            <h2 class="project--desc emailsamples-slide-title">Email Samples</h2>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hex--item" tabindex="8" style="display: none;">
+                            <div class="ccportfoliohome__box">
+                                <div class="ccportfoliohome__grid--hexagon">
+                                    <div class="ccportfoliohome__grid--img" style="background-image: url('./assets/susa.png'); background-position: center center;" height="200px" width="200px"></div>
+                                    <div class="ccportfoliohome__grid--innercontainer">
+                                        <a href="#marketingConsulting" class="ccportfoliohome__grid--link">
+                                            <h2 class="project--desc">Marketing &amp; Consulting</h2>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </section>
+
+
+</section>
+<include src="partial_globalfooter.html" ></include>
+</body>
+</html>

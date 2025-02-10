@@ -1,0 +1,436 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Doctor Template | Portfolio | Color in Code</title>
+    <meta name="description" content="Color In Code is a full service web design and development company serving small, medium, enterprise business; project page for our doctor template page.">
+    <meta name="keywords" content="color in code, buy website, premade website, prebuilt template, website template, expert template, website boilerplate">
+    <link rel="canonical" href="https://colorincode.me/portfolio/project-doc-temp.html" />
+    <link rel="icon" href="https://colorincode.me/favicon.ico" sizes="any">
+    <link rel="icon" href="https://colorincode.me/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="https://colorincode.me/icon.png">
+    <link rel="icon" type="image/png" href="https://colorincode.me/favicon-96x96.png" sizes="96x96" />
+    <link rel="manifest" href="https://colorincode.me/webmanifest.json" />
+    <meta name="apple-mobile-web-app-title" content="Color in Code" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://colorincode.me/assets/hexagon-background-dark.jpg" />
+    <meta property="og:image:width" content="1920" />
+    <meta property="og:image:height" content="1080" />
+    <meta property="og:image:type" content="image/jpg" />
+    <link rel="stylesheet" href="https://use.typekit.net/vyz7xic.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./scss/project-doc-temp.scss" />
+    <link rel="stylesheet" href="./scss/style.scss" />
+    <script type="module" src="./ts/app.ts"></script>
+    <script type="module" src="./ts/project-doc-temp.ts" defer></script>
+    <script src="https://kit.fontawesome.com/e56bb8c3d5.js" crossorigin="anonymous"></script>
+</head>
+
+<body class="doctemplate">
+    <!-- begin header inject -->
+<include src="partial_globalheader.html" ></include>
+<include src="navbar.html" ></include>
+<!-- end header inject -->
+<!-- slide in -->
+<div class="project-info-overflow-container">
+    <div class="project-info-overlay__wrapper" style="top: 56px;">
+        <div class="project-info__inner">
+                <div class="overlay--pagelink__wrapper">
+                    <a href="/portfolio" class="overlay--pagelinks">Portfolio Home</a>
+                    <p class="overlay--pagelinks">&nbsp;|&nbsp;</p>
+                    <a href="/portfolio/webdevelopment.html" id="slideInThingyColor" class="overlay--pagelinks cic--blue-text" style="color: #ffd60a;">Web Development</a>
+                </div>
+                <div class="text-hexagon-h1" style="color: #ffd60a;">Project:</div>
+                <div class="text-hexagon-p" style="color: #ffffff;">Color in Code<br/>Doctor's template</div>
+                <div class="text-hexagon-h1" style="color: #ffd60a;">Stack:</div>
+                <div class="text-hexagon-p" style="color: #ffffff;">HTML/SCSS/TS</div>
+            <div class="fa--arrow__wrapper"><i class="fa-light fa-angle-left fa-fw fa-dropdown--arrow"></i></div>
+        </div>
+        <script>document.addEventListener("DOMContentLoaded",(function(){const e=document.querySelector(".project-info-overlay__wrapper"),s=document.querySelector(".fa-dropdown--arrow");e.classList.add("slide-in"),e.classList.add("expanded"),setTimeout((()=>{e.classList.remove("slide-in"),e.classList.add("slide-out"),e.classList.remove("expanded")}),3e3),s.addEventListener("click",(()=>{e.classList.toggle("expanded"),e.classList.contains("expanded")?(e.classList.remove("slide-out"),e.classList.add("slide-in")):(e.classList.remove("slide-in"),e.classList.add("slide-out"))}))}));</script>
+    </div>
+</div>
+<!-- slide in --> 
+ 
+    <header class="header__navbar__wrapper">
+        <nav class="cic--header__navbar__wrapper cic--navbar--fixedtop header__navbar">
+            <ul class="navbar__wrapper--horizontal navbar-menu ">
+                <span class="navbar__alignflexstart"><li class="navbar__item--horizontal"><a class="navbar__item__link__text--horizontal" href="index.html">Home</a></li>
+                <li class="navbar__item--horizontal"><a class="navbar__item__link__text--horizontal" href="#about">About</a></li>
+                <li class="navbar__item--horizontal"><a class="navbar__item__link__text--horizontal" href="#treatments">Treatments</a></li>
+                <li class="navbar__item--horizontal"><a class="navbar__item__link__text--horizontal" href="#insurance">Insurance &amp; Pricing</a></li>
+                <li class="navbar__item--horizontal"><a class="navbar__item__link__text--horizontal" href="#contact">Contact</a></li>
+            </span>
+                <span class="navbar__alignflexend">
+                <li class="navbar__item--horizontal button--cta-secondary"> <a class="navbar__item__link__text--horizontal"> <i class="fa-duotone fa-phone-arrow-up-right navbar__item__link__icon--horizontal"></i> Call (505) 555-5555</a></li>
+                <li class="navbar__item--horizontal"><a class="navbar__item__link__text--horizontal"  href="#contact">Book an appointment</a></li>
+            </span>
+            </ul>
+                <!-- <ul class="navbar__wrapper--horizontal">
+                <li class="navbar__item--horizontal button--cta-secondary"> <a class="navbar__item__link__text--horizontal"> <i class="fa-duotone fa-phone-arrow-up-right navbar__item__link__icon--horizontal"></i> Call (505) 555-5555</a></li>
+                <li class="navbar__item--horizontal"><a class="navbar__item__link__text--horizontal"  href="#contact">Book an appointment</a></li>
+            </ul> -->
+            <!--mobile menu start, and hamburger -->
+            <div class="cic--mobileburger">
+                <div class="burgerwrapper">
+            <div class="burger--background"></div>
+            <div id="navbarBurger" class="navbar-burger"><i class="fa-solid fa-bars hamburger--icon--fontawesome" ></i></div>
+                </div>
+            <nav id="burgerNavbarMenu" class="navbar-menu">
+                <ul class="navbar__wrapper--vertical">
+                    <li class="navbar__item--vertical">
+                        <a class="navbar__item__link--vertical" href="index.html">Home</a>
+                    </li>
+                    <li class="navbar__item--vertical">
+                        <a class="navbar__item__link--vertical" href="#about">About</a>
+                    </li>
+                    <li class="navbar__item--vertical">
+                        <a class="navbar__item__link--vertical" href="#treatments">Treatments</a>
+                    </li>
+                    <li class="navbar__item--vertical">
+                        <a class="navbar__item__link--vertical" href="#insurance">Insurance & Pricing</a>
+                    </li>
+                    <li class="navbar__item--vertical">
+                        <a class="navbar__item__link--vertical" href="#contact">Contact</a>
+                    <li class="navbar__item--vertical">
+                        <a class="navbar__item__link--vertical" href="#contact">Call (505) 555-5555</a>
+                    </li>
+                    <li class="navbar__item--vertical">
+                        <a class="navbar__item__link--vertical" href="#contact">Book an appointment</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <!--mobile menu end, and hamburger -->
+        </nav>
+    </header>
+
+    <section role="banner" class="hero--section__wrapper primary-blue-gradient-bg-cc hero--two--column--grid-cc ">
+        <main role="main" class=" first--area-cc">
+
+            <h1 class="hero__text--cc">The Doctor Is In!</h1>
+            <p class="hero--paragraph">Our goal is to make sure our customers receive the best treatment possible every visit.</p>
+        </main>
+        <aside role="complementary" class="hero--image__wrapper">
+            <img class="hero--image" src="/assets/doctor-colorized-lead.jpg">
+        </aside>
+        <div role="contentinfo" class="hero--button__wrapper">
+
+            <button class="hero--button--appt hero--button hero--button--cta cic__implicitgrid-item"><a href=""
+                    class="hero--button--text"><i
+                        class="fa-duotone fa-calendar-lines-pen hero--button-icon hero--button-icon-cta "></i> Book An
+                    Appointment</a></button>
+            <button class="hero--button--call hero--button hero--button--cta-active cic__implicitgrid-item"><a href=""
+                    class="hero--button--text cta--hero-text"><i
+                        class="fa-duotone fa-phone-arrow-up-right hero--button-icon fa-swap-opacity"></i> Call (505)
+                    555-5555</a></button>
+        </div>
+    </section>
+    <!-- end lead section-->
+
+    <!-- hero wave divider start-->
+    <div class="hero-wave-divider">
+        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path
+                d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+                class="shape-fill"></path>
+        </svg>
+    </div>
+    <!-- hero wave divider end-->
+    <!--about section start-->
+    <section class="fullwidth__wrapper-cc about__sectionwrapper" id="#about" >
+
+        <div class="section__outerparagraphwrapper-cc">
+            <div class="section__innerrparagraphwrapper-cc">
+                <h1 class="sectiontitles--h1-cc text-blue--cc">About Us</h1>    
+                <h2 class="sectiontitles--h2-cc text-lightblue--cc"> We are a doctor's office located in the Albuquerque area</h2>
+                <div class="centeredparagraph__text--cc">
+                    <p class="text-grey--cc">If you have had a health concern or a nagging problem you are worried about, 
+                        our doctors office is here to help! We specialize in endocrinology, diabetes, weight control 
+                        and other chronic conditions. We can run blood tests, check for genetic conditions, and we can help you
+                        get a referral to any specialist in this area that you may need. We are here to help you get the care you need.
+                    </p>
+                </div>
+            </div>    
+        </div>
+
+        <div class="four--column--grid-cc">
+            <div class="about--card__wrapper ">
+                <div class="card--icon--wrapper">
+                    <div class="about--card--icon--background"><i class="fa-duotone fa-stethoscope"></i></div>
+                    <div class="about--card--hover--effect"></div>
+                </div>
+                <h3 class="about--card-titles">Diabetes</h3>
+                <p class="about--card--descriptions">We treat the physical and mental aspects of diabetes through a multidisciplinary team approach</p>
+            </div>
+            <div class="about--card__wrapper ">
+                <div class="card--icon--wrapper">
+                    <div class="about--card--icon--background"><i class="fa-duotone fa-hospital"></i></div>
+                    <div class="about--card--hover--effect"></div>
+                </div>
+                <h3 class="about--card-titles">High Blood Pressure</h3>
+                <p class="about--card--descriptions">We treat the physical and mental aspects of diabetes through a multidisciplinary team approach</p>
+            </div>
+            <div class="about--card__wrapper ">
+                <div class="card--icon--wrapper">
+                    <div class="about--card--icon--background"><i class="fa-duotone fa-syringe"></i></div>
+                    <div class="about--card--hover--effect"></div>
+                </div>
+                <h3 class="about--card-titles">Pain Management</h3>
+                <p class="about--card--descriptions">We treat the physical and mental aspects of diabetes through a multidisciplinary team approach</p>
+            </div>
+            <div class="about--card__wrapper ">
+                <div class="card--icon--wrapper">
+                <div class="about--card--icon--background"><i class="fa-duotone fa-weight-scale"></i></div>
+                <div class="about--card--hover--effect"></div>
+                </div>
+                <h3 class="about--card-titles">Chronic Diseases</h3>
+                <p class="about--card--descriptions">We treat the physical and mental aspects of diabetes through a multidisciplinary team approach</p>
+            </div>
+        </div>
+
+        <div class="extra--padding--div"></div>
+
+    </section>
+    <!--about section end-->
+    <!-- bottom wavy divider start-->
+    <div class="bottom__divider-cc">
+        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path
+                d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+                class="shape-fill"></path>
+        </svg>
+    </div>
+    <!-- bottom wavy divider end-->
+    <!-- line section start-->
+    <section class="line-background-overlay--cc ">
+
+        <section class="default__wrapper-cc " id="#treatments">
+            <div class="section__outerparagraphwrapper-cc">
+                <div class="section__innerrparagraphwrapper-cc">
+                    <h1 class="sectiontitles--h1-cc text-blue--cc">Treatments We Offer</h1>    
+                    <h2 class="sectiontitles--h2-cc text-lightblue--cc">Learn More About Our Treatments</h2>
+                </div>    
+            </div>
+            
+        </section>
+
+    </section>
+    <!-- line section end-->
+    <!-- bottom wavy divider start-->
+    <div class="top__divider-cc">
+        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path
+                d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+                class="shape-fill"></path>
+        </svg>
+    </div>
+    <!-- bottom wavy divider end-->
+
+    <!--about section start-->
+    <section class="fullwidth__wrapper-cc about__sectionwrapper" id="#insurance">
+        <div class="section__outerparagraphwrapper-cc">
+            <div class="section__innerrparagraphwrapper-cc">
+                <h1 class="sectiontitles--h1-cc text-blue--cc">Insurance &amp; Pricing</h1>
+                <h2 class="sectiontitles--h2-cc text-lightblue--cc"> We accept the following insurance providers:</h2>
+            </div>
+        </div>
+
+        <div class="insurance--providers__wrapper">
+        
+            <div class="insurance--providers--card">
+                <img class="insurance--logo--cigna" src="/assets/cigna-logo.svg">
+            </div>
+        
+            <div class="insurance--providers--card">
+                <img class="insurance--logo--aetna" src="/assets/aetna-logo.svg">
+            </div>
+        
+            <div class="insurance--providers--card">
+                <img class="insurance--logo--bcbs" src="/assets/bcbs-logo.svg">
+            </div>
+        
+            <div class="insurance--providers--card">
+                <img class="insurance--logo--anthem" src="/assets/anthem-bcbs-logo.svg">
+            </div>
+        
+            <div class="insurance--providers--card">
+                <img class="insurance--logo--molina" src="/assets/molina-logo.svg">
+            </div>
+        
+            <div class="insurance--providers--card">
+                <img class="insurance--logo--humana" src="/assets/humana-logo.svg">
+            </div>
+        
+        </div>
+
+    </section>
+    <!--about section end-->
+
+    <!-- bottom wavy divider start-->
+    <div class="topwhite__divider-cc wave--flip">
+        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path
+                d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+                class="shape-fill"></path>
+        </svg>
+    </div>
+    <!-- bottom wavy divider end-->
+    <!-- blue section start-->
+    <section class="primary-yellow-gradient-bg-cc">
+
+        <section class="fullwidth__wrapper-cc">
+            <div class="section__outerparagraphwrapper-cc">
+                <div class="section__innerrparagraphwrapper-cc">
+                    <div class="extra--padding--div"></div>
+                    <h1 class="sectiontitles--h1-cc text-blue--cc">Testimonials</h1>    
+                    <h2 class="sectiontitles--h2-cc text-lightblue--cc">See What People Are Saying</h2>
+                </div>    
+            </div>
+        </section>
+
+    <!-- begin splide testimonial carousel-->
+        <section class="splide" id="testimonialCarousel" aria-label="Our Testimonials">
+            <div class="splide__track">
+                <ul class="splide__list">
+                    <li class="splide__slide">
+                        <div class="splide--text__container">
+                            <div class="default__roundedcontainer-cc fancyopaquecontainer-cc primary-yellow-gradient-opaque-cc">
+                        <p class="splide--text--content">As a busy professional, finding a reliable primary care physician who truly listens to my health concerns was essential. Dr. Smith exceeded all expectations by taking the time to understand my medical history and provide personalized treatment plans tailored to my unique needs.</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="splide__slide">
+                        <div class="splide--text__container">
+                            <div class="default__roundedcontainer-cc fancyopaquecontainer-cc primary-yellow-gradient-opaque-cc">
+                                <p class="splide--text--content">Navigating the complexities of our current healthcare system can be overwhelming, but Dr. Johnson made everything easy to understand while providing exceptional care. His knowledge and attention to detail helped me manage an ongoing health issue more effectively than ever before. Additionally, the online patient portal allows for convenient communication and access to important health records.</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="splide__slide">
+                        <div class="splide--text__container">
+                            <div class="default__roundedcontainer-cc fancyopaquecontainer-cc primary-yellow-gradient-opaque-cc">
+                                <p class="splide--text--content">The staff at this office are friendly, efficient, and always available when needed. I highly recommend choosing them for your family's healthcare needs!</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="splide__slide">
+                        <div class="splide--text__container">
+                            <div class="default__roundedcontainer-cc fancyopaquecontainer-cc primary-yellow-gradient-opaque-cc">
+                                <p class="splide--text--content">After years of dealing with inconsistent care from multiple providers, I finally found solace at this location. From the moment I walked in, I felt welcomed and valued as a patient.</p>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="splide__arrows">
+                <button class="splide__arrow splide__arrow--prev">
+                    <i class="fa-duotone fa-arrow-left"></i>
+                </button>
+                <button class="splide__arrow splide__arrow--next">
+                    <i class="fa-duotone fa-arrow-right"></i>
+                </button>
+            </div>
+        </section>
+    <!-- end splide testimonial carousel-->
+    </section>
+ <!-- blue wave divider start-->
+ <div class="hero-wave-divider yellow-wave-divider">
+    <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path
+            d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+            class="shape-fill"></path>
+    </svg>
+</div>
+<!--blue wave divider end-->
+
+    <!-- white section start--> 
+    <section class="fullwidth__wrapper-cc " id="#contact">
+        <div class="section__outerparagraphwrapper-cc">
+            <div class="section__innerrparagraphwrapper-cc">
+                <h1 class="sectiontitles--h1-cc text-blue--cc">Contact Us</h1>    
+                <h2 class="sectiontitles--h2-cc text-yellow--cc"> Get in touch with us:</h2>
+                <div class="centeredparagraph__text--cc">
+                    <p class="text-grey--cc">If you have had a health concern or a nagging problem you are worried about, 
+                        our doctors office is here to help! We specialize in endocrinology, diabetes, weight control 
+                        and other chronic conditions. We can run blood tests, check for genetic conditions, and we can help you
+                        get a referral to any specialist in this area that you may need. We are here to help you get the care you need.
+                    </p>
+                </div>
+            </div>    
+        </div>
+    </section>
+    
+    <!--white section end-->
+    <!-- footer wavy divider start-->
+    <div class="footer__divider-cc">
+        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path
+                d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+                class="shape-fill"></path>
+        </svg>
+    </div>
+    <!-- footer wavy divider end-->   
+   <!-- footer section-->
+   <footer class="footer__wrapper" id="#contact">
+    <div class="footer__wrapper--column">
+        <ul class="footer--social--icon--list">
+            <li><i class="fa-solid fa-location-dot"></i></li>
+            <li><i class="fa-solid fa-square-phone"></i></li>
+            <li><i class="fa-brands fa-square-facebook"></i></li>
+            <li><i class="fa-brands fa-linkedin"></i></li>
+            <li><i class="fa-brands fa-square-twitter"></i></li>
+            <li><i class="fa-brands fa-square-youtube"></i></li>
+        </ul>
+        <ul class="footer--menu__wrapper--horizontal">
+            <li class="footer__item--horizontal"><a class="footer__item__link__text--horizontal">Home</a></li>
+            <li class="footer__item--horizontal"><a class="footer__item__link__text--horizontal">About</a></li>
+            <li class="footer__item--horizontal"><a class="footer__item__link__text--horizontal">Treatments</a></li>
+            <li class="footer__item--horizontal"><a class="footer__item__link__text--horizontal">Insurance & Pricing</a>
+            </li>
+            <li class="footer__item--horizontal"><a class="footer__item__link__text--horizontal">Contact</a></li>
+        </ul>
+    </div>
+    <!-- <p class="copyright__colorincode"> &copy; Copyright &nbsp;<span id="currentYear">2023</span>&nbsp; | Color In Code </p> -->
+</footer>
+<!--begin inject project hexagon-->
+<!-- <style>
+    .text-hexagon-stroke {
+        background: #003566;
+        box-shadow: 4px 4px 4px 4px #011d37;
+    }
+    /* #slidein-hexagon {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+    } */
+    .text-hexagon-h1 , .text-hexagon-p {
+        font-size: 0.9rem;
+        line-height: 1;
+        font-family: "rift", sans-serif;
+    }
+</style>
+<section id="slidein-hexagon">
+    <div class="hexagon__wrapper">
+        <div class="text-hexagon-stroke">
+            <div class="text-hexagon" style="background-color:#ffd60ade">
+                <h5 class="text-hexagon-h1">Project:</h5>
+                <p class="text-hexagon-p">Color in Code</p>
+                <p class="text-hexagon-p">Doctor's template</p>
+                <h5 class="text-hexagon-h1">Stack:</h5>
+                <p class="text-hexagon-p">HTML/CSS/TS</p>
+            </div>
+        </div>
+    </div>
+  </section> -->
+<!--end inject project hexagon-->    
+ <!-- begin footer inject-->
+ <include src="partial_globalfooter.html" ></include>
+ <!-- end footer inject -->
+</body>
+
+</html>

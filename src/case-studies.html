@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- meta data-->
+    <meta charset="utf-8">
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="website" />
+    <title> Code Samples | Portfolio | Color In Code </title>
+    <meta name="description" content="Color In Code is a full service web development company serving small, medium, enterprise business; case studies page.">
+    <meta property="keywords" content="color in code, web developer, web design, web designer, web development examples, developer portfolio, frontend case studies">
+    <meta property="og:title" content="Color in Code Portfolio: case studies." />
+    <meta property="og:description" content="Color In Code is a full service web development company serving small, medium, enterprise business; code samples page." />
+    <meta property="og:url" content="http://colorincode.me" />
+    <meta property="og:site_name" content="Color In Code | Portfolio | Web Development and Graphic Design" />
+    <meta name="geo.region" content="United States (US)" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="canonical" href="https://colorincode.me/portfolio/case-studies.html" />
+    <link rel="icon" href="https://colorincode.me/favicon.ico" sizes="any">
+    <link rel="icon" href="https://colorincode.me/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="https://colorincode.me/icon.png">
+    <link rel="icon" type="image/png" href="https://colorincode.me/favicon-96x96.png" sizes="96x96" />
+    <meta name="apple-mobile-web-app-title" content="Color in Code" />
+    <link rel="manifest" href="https://colorincode.me/webmanifest.json" />
+    <meta property="og:image" content="https://colorincode.me/assets/hexagon-background-dark.jpg" />
+    <meta property="og:image:width" content="1920" />
+    <meta property="og:image:height" content="1080" />
+    <meta property="og:image:type" content="image/jpg" />
+    <!-- sitewide font call-->
+    <link rel="stylesheet" href="https://use.typekit.net/vyz7xic.css">
+    <link rel="stylesheet" href="https://use.typekit.net/piq5ctv.css">
+    <link rel="stylesheet" href="https://use.typekit.net/jcm3jdf.css">
+    <script src="https://kit.fontawesome.com/e56bb8c3d5.js" crossorigin="anonymous"></script>
+    <!--main stylesheet call-->
+    <link rel="stylesheet" href="./scss/style.scss" />
+    <!-- main JS call, JS here will bubble make sure if superceding JS exists it goes at bottom -->
+    <!-- reveal child theme-->
+    <link rel="stylesheet" href="./scss/colorincoderevealtheme.scss">
+    <!-- child stylesheet for the page-->
+    <link rel="stylesheet" href="./scss/case-studies.scss" />
+    <script type="module" src="./ts/case-studies.ts"></script>
+    <script type="module" src="./ts/app.ts" defer></script>
+</head>
+
+<body class="code-samples">
+<!-- begin header inject -->
+<include src="partial_globalheader.html" ></include>
+<include src="navbar.html" ></include>
+<!-- end header inject -->
+
+
+    <div class="reveal" data-reveal-type="caseStudies">
+        <div class="slides">
+            <section id="category-slide" data-slide-name="Category Selection" data-slide-color="#202324">
+                <section class="portfoliopagegrid__wrapper">
+                    <div class="cs--intro--page__wrapper">
+                        <h1 class="cs--page--title">Case Studies</h1>
+                        <img class="cs--painted--code" src="./assets/code-paintsplash-1x.png" alt="code samples page">
+                        <div class="code-samples-list__wrapper">
+                            <!--duplicated begin-->
+                            <ul class="code-samples-list">
+                                <li><a href="./case-studies.html#AIRedTeam">AI Red Teaming</a></li>
+                                <li><a href="./case-studies.html#specialProjectsGroup">Special Projects Group</a></li>
+                            </ul>
+                        </div>
+                        <div class="code-samples-list__wrapper">
+                            <!--duplicated begin-->
+                        <ul class="code-samples-list">
+                            <li><a href="./code-samples.html#/1">Hover Effects</a></li>
+                            <li><a href="./code-samples.html#/2">Particle Effects</a></li>
+                        </ul>
+                        </div>
+                    </div>
+                </section>
+            </section>
+
+
+            <section data-background="#ffffff" id="AIRedTeam">
+
+                <!-- slide in -->
+                <div class="project-info-overflow-container">
+                    <div class="project-info-overlay__wrapper">
+                        <div class="project-info__inner">
+                                <div class="overlay--pagelink__wrapper">
+                                    <a href="/portfolio" class="overlay--pagelinks">Portfolio Home</a>
+                                    <p class="overlay--pagelinks">&nbsp;|&nbsp;</p>
+                                    <a href="/portfolio/case-studies.html" id="slideInThingyColor" class="overlay--pagelinks cic--green-text" style="color: #73db93;">Case Studies</a>
+                                </div>
+                                <div class="text-hexagon-h1" style="color:#73db93">Project:</div>
+                                <div class="text-hexagon-p" style="color:#FFF">Gray Swan</div>
+                                <div class="text-hexagon-h1" style="color:#73db93">Roles:</div>
+                                <div class="text-hexagon-p" style="color:#FFF">AI Red Team</div>
+                                <div class="text-hexagon-h1" style="color:#73db93">Stack:</div>
+                                <div class="text-hexagon-p" style="color:#FFF">AI & ML frameworks</div>
+                                <div class="text-hexagon-p" style="color:#FFF">Adversarial AI Techniques</div>
+                                <div class="text-hexagon-p" style="color:#FFF">Social Engineering</div>
+                                <div class="text-hexagon-p" style="color:#FFF">Prompt Engineering</div>
+                            <div class="fa--arrow__wrapper"><i class="fa-light fa-angle-left fa-fw fa-dropdown--arrow"></i></div>
+                        </div>
+                        <script>
+                            // document.addEventListener("DOMContentLoaded", function() {
+                            //     setTimeout(function() {
+                            //         const overlays = document.querySelectorAll(".project-info-overlay__wrapper");
+                            //         const arrows = document.querySelectorAll(".fa-dropdown--arrow");
+
+                            //         overlays.forEach((overlay, index) => {
+                            //             overlay.classList.add("peek-animation");
+                            //             arrows[index].addEventListener("click", () => {
+                            //                 overlay.classList.toggle("expanded");
+                            //                 if (overlay.classList.contains("expanded")) {
+                            //                     overlay.classList.remove("slide-out");
+                            //                     overlay.classList.add("slide-in");
+                            //                 } else {
+                            //                     overlay.classList.remove("slide-in");
+                            //                     overlay.classList.add("slide-out");
+                            //                 }
+                            //             });
+                            //         });
+                            //     }, 500);
+                            // });
+                        </script>
+                    </div>
+                </div>
+                <!-- slide in --> 
+
+                    <section data-background="#ffffff">
+                        <div class="he--wrapper__wrapper">
+                            <div class="he--title-and-description__wrapper">
+                                <h1 class="red-team-title">AI Red Teaming</h1>
+                                <p class="he--description">AI red teaming is a process in which artificial intelligence systems are intentionally tested for vulnerabilities within a controlled environment. Testers simulate real-world user interactions, attempting to manipulate the AI into generating harmful outputs. This proactive approach helps identify potential risks before deployment, ensuring the AI is secure and does not produce unethical responses. The ultimate goal is to safeguard the AI, addressing vulnerabilities and ensuring responsible performance prior to its release.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="he--see--examples__wrapper">
+                            <a class="he--see--examples" href="./case-studies.html#/backgroundSection">
+                                <p class="he--see--examples--text">Background</p>
+                                <i class="he--samples--arrow fa-light fa-caret-down"></i>
+                            </a>
+                        </div>
+                    </section>
+                    
+                    <section data-background="#ffffff" id="backgroundSection">
+                        <div class="he--wrapper__wrapper">
+                            <div class="he--title-and-description__wrapper">
+                                <h2>Gray Swan</h2>
+                                <p class="he--description">Grey Swan is an AI safety and security company. They have developed tools that automatically assess the risks of AI models. They also provide an opportunity to red team against AI models in arenas. Arenas are simply a chat with an anonymous AI model in which you attempt to get specific reccomended harmful outputs. 
+                                </p>
+                                <img class="grayswan--image" src="/assets/harmful-ai-assistant-behaviors.png" alt="">
+                            </div>
+                        </div>
+                        <div class="he--see--examples__wrapper">
+                            <a class="he--see--examples" href="./case-studies.html#/harmfulAiAssistant">
+                                <p class="he--see--examples--text">Harmful Assistant</p>
+                                <i class="he--samples--arrow fa-light fa-caret-down"></i>
+                            </a>
+                        </div>
+                    </section>
+                    
+                    <section data-background="#ffffff" id="harmfulAiAssistant">
+                        <div class="he--wrapper__wrapper">
+                            <div class="he--title-and-description__wrapper">
+                                <h2>Harmful AI Assistant</h2>
+                                <p class="he--description">One of their initiatives is an arena called "Harmful AI Assistant," which aims to test the robustness of AI models against misuse. This case study focuses in on this specific arena.
+                                </p>
+                                <img class="grayswan--image" src="/assets/grayswan-harmful-ai-assistant.png" alt="">
+                                
+                            </div>
+                        </div>
+                        <div class="he--see--examples__wrapper">
+                            <a class="he--see--examples" href="./case-studies.html#/circuitBreakers">
+                                <p class="he--see--examples--text">Circuit Breakers</p>
+                                <i class="he--samples--arrow fa-light fa-caret-down"></i>
+                            </a>
+                        </div>
+                    </section>
+
+                    <section data-background="#ffffff" id="circuitBreakers">
+                        <div class="he--wrapper__wrapper">
+                            <div class="he--title-and-description__wrapper">
+                                <h2>Circuit Breakers</h2>
+                                <p class="he--description">Circuit breakers serve as a defense against malicious prompts. They operate by identifying specific patterns or topics that could lead to undesirable responses, if one is detected they immediately halt the generation process and return a generic response. If your message has tripped a circuit breaker, you will be met with a message similar to this:
+                                </p>
+                                <img class="grayswan--image" src="/assets/ai-circuit-breaker-response.png" alt="">
+                                
+                            </div>
+                        </div>
+                        <div class="he--see--examples__wrapper">
+                            <a class="he--see--examples" href="./case-studies.html#/jailbreaks">
+                                <p class="he--see--examples--text">Jailbreaks</p>
+                                <i class="he--samples--arrow fa-light fa-caret-down"></i>
+                            </a>
+                        </div>
+                    </section>
+
+                    <section data-background="#ffffff" id="jailbreaks" data-auto-animate>
+                        <div class="he--wrapper__wrapper">
+                            <div class="he--title-and-description__wrapper">
+                                <h2>Jailbreaks</h2>
+                                <p class="he--description">There seems to be a threshold of sensitive content after which the circuit breaker will trip. One of the first methods our team discovered is staying below that threshold and gradually accumulating the information needed. Then you can have the model compile that accumulated content into your target message. The models seem to be more permissive when it is refining or rephrasing content which it has already generated. 
+                                </p>
+                            </div>
+                        </div>
+                        <div class="he--see--examples__wrapper">
+                            <a class="he--see--examples" href="./case-studies.html#/jailbreaks2">
+                                <p class="he--see--examples--text">Jailbreaks</p>
+                                <i class="he--samples--arrow fa-light fa-caret-down"></i>
+                            </a>
+                        </div>
+                    </section>
+
+                    <section data-background="#ffffff" id="jailbreaks2" data-auto-animate>
+                        <div class="he--wrapper__wrapper">
+                            <div class="he--title-and-description__wrapper">
+                                <p class="he--description">There seems to be a threshold of sensitive content after which the circuit breaker will trip. One of the first methods our team discovered is staying below that threshold and gradually accumulating the information needed. Then you can have the model compile that accumulated content into your target message. The models seem to be more permissive when it is refining or rephrasing content which it has already generated.
+                                </p>
+                                <p class="he--description">Another weakness we discovered was context interpretation. When a model believes that it is creating fictional scenarios such as roleplaying, or crafting a narrative for a book it can be far more permissive. This can then be combined with the previous method by simply having the model reword a prior output which was initially framed as fiction into a real life scenario. 
+                                </p>
+                            </div>
+                        </div>
+                        <div class="he--see--examples__wrapper">
+                            <a class="he--see--examples" href="./case-studies.html#/conclusion">
+                                <p class="he--see--examples--text">Conclusion</p>
+                                <i class="he--samples--arrow fa-light fa-caret-down"></i>
+                            </a>
+                        </div>
+                    </section>
+
+                    <section data-background="#ffffff" id="conclusion">
+                        <div class="he--wrapper__wrapper">
+                            <div class="he--title-and-description__wrapper">
+                                <h2>Conclusion</h2>
+                                <p class="he--description">The purpose of this testing is not to simply exploit the models. Once a jailbreak has been submitted it will be used to develop more robust AI security. As the data is collected and examined, vulnerabilities can be discovered and understood. This helps models to be better equipped to resist manipulation and maintain its boundries.
+                                </p>
+                            </div>
+                        </div>
+                    </section>
+
+            </section>
+
+            <section data-background="#ffffff" id="specialProjectsGroup">
+
+                <!-- slide in -->
+                <div class="project-info-overflow-container">
+                    <div class="project-info-overlay__wrapper">
+                        <div class="project-info__inner">
+                                <div class="overlay--pagelink__wrapper">
+                                    <a href="/portfolio" class="overlay--pagelinks">Portfolio Home</a>
+                                    <p class="overlay--pagelinks">&nbsp;|&nbsp;</p>
+                                    <a href="/portfolio/case-studies.html" id="slideInThingyColor" class="overlay--pagelinks cic--green-text" style="color: #2ed2ef;">Case Studies</a>
+                                </div>
+                                <div class="text-hexagon-h1" style="color:#2ed2ef">Project:</div>
+                                <div class="text-hexagon-p" style="color:#FFF">Special Projects Group</div>
+                                <div class="text-hexagon-h1" style="color:#2ed2ef">Roles:</div>
+                                <div class="text-hexagon-p" style="color:#FFF">Principle Developer</div>
+                                <div class="text-hexagon-h1" style="color:#2ed2ef">Stack:</div>
+                                <div class="text-hexagon-p" style="color:#FFF">Website Optimization</div>
+                                <div class="text-hexagon-p" style="color:#FFF">Video Editing</div>
+                                <div class="text-hexagon-p" style="color:#FFF">HTML/SCSS/TS</div>
+                            <div class="fa--arrow__wrapper"><i class="fa-light fa-angle-left fa-fw fa-dropdown--arrow"></i></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- slide in --> 
+
+                    <section data-background="#ffffff">
+                        <div class="he--wrapper__wrapper">
+                            <div class="he--title-and-description__wrapper">
+                                <h1 class="spg-title">Website Optimizaton</h1>
+                                <p class="he--description">Website optimization is a process in which web applications are systematically analyzed and improved to enhance performance, user experience, and conversion rates. The ultimate goal is to create a seamless, fast-loading, and user-friendly website that effectively converts visitors into customers, thereby maximizing the site's business potential.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="he--see--examples__wrapper">
+                            <a class="he--see--examples" href="./case-studies.html#/SPGBbackgroundSection">
+                                <p class="he--see--examples--text">Background</p>
+                                <i class="he--samples--arrow fa-light fa-caret-down"></i>
+                            </a>
+                        </div>
+                    </section>
+                    
+                    <section data-background="#ffffff" id="SPGBbackgroundSection">
+                        <div class="he--wrapper__wrapper">
+                            <div class="he--title-and-description__wrapper">
+                                <h2>Special Projects Group</h2>
+                                <p class="he--description">Special Projects Group's portfolio site, with videos as its primary content, faced significant challenges due to the resource-intensive nature of video content. Videos can be particularly demanding on server resources, often consuming high amounts of CPU and bandwidth. This can lead to slower load times, increased buffering, and a poor user experience if not dealt with properly. Addressing these issues requires a multifaceted approach, balancing video quality with performance optimization techniques.
+                                </p>
+                                <img class="grayswan--image" src="/assets/spg-homepage.png" alt="">
+                            </div>
+                        </div>
+                        <div class="he--see--examples__wrapper">
+                            <a class="he--see--examples" href="./case-studies.html#/SPGBefore">
+                                <p class="he--see--examples--text">Before</p>
+                                <i class="he--samples--arrow fa-light fa-caret-down"></i>
+                            </a>
+                        </div>
+                    </section>
+                    
+                    <section data-background="#ffffff" id="SPGBefore">
+                        <div class="he--wrapper__wrapper">
+                            <div class="he--title-and-description__wrapper">
+                                <h2>Before</h2>
+                                <p class="he--description">Before optimization, Special Projects Group's portfolio site struggled with performance, scoring a mere 56 out of 100 on Lighthouse speed tests. This low rating indicated significant performance bottlenecks, primarily driven by uncompressed, high-resolution video content that dramatically slowed page load times.
+                                </p>
+                                <img class="grayswan--image" src="/assets/spg-lighthouse-before.png" alt="">
+                                
+                            </div>
+                        </div>
+                        <div class="he--see--examples__wrapper">
+                            <a class="he--see--examples" href="./case-studies.html#/SPGAfter">
+                                <p class="he--see--examples--text">After</p>
+                                <i class="he--samples--arrow fa-light fa-caret-down"></i>
+                            </a>
+                        </div>
+                    </section>
+
+                    <section data-background="#ffffff" id="SPGAfter">
+                        <div class="he--wrapper__wrapper">
+                            <div class="he--title-and-description__wrapper">
+                                <h2>After</h2>
+                                <p class="he--description">After implementing our comprehensive optimization strategy, Special Projects Group's portfolio site dramatically improved its Lighthouse performance score, achieving an impressive 85 out of 100. This substantial 29-point increase represented near-maximum performance potential, especially challenging for a video-heavy website.
+                                </p>
+                                <img class="grayswan--image" src="/assets/spg-lighthouse-after.png" alt="">
+                            </div>
+                        </div>
+                        <div class="he--see--examples__wrapper">
+                            <a class="he--see--examples" href="./case-studies.html#/SPGConclusion">
+                                <p class="he--see--examples--text">Conclusion</p>
+                                <i class="he--samples--arrow fa-light fa-caret-down"></i>
+                            </a>
+                        </div>
+                    </section>
+
+                    <section data-background="#ffffff" id="SPGConclusion">
+                        <div class="he--wrapper__wrapper">
+                            <div class="he--title-and-description__wrapper">
+                                <h2>Conclusion</h2>
+                                <p class="he--description">In the competitive landscape of digital portfolios, performance is paramount. Our optimization journey with Special Projects Group demonstrates that even video-intensive websites can achieve exceptional speed and user experience through strategic technical interventions. By meticulously addressing performance bottlenecks, implementing cutting-edge compression techniques, and prioritizing user interaction, we transformed a sluggish portfolio site into a lightning-fast digital showcase. The result was not just a technical achievement, but a powerful testament to how intelligent design and technical expertise can elevate a digital platform from merely functional to truly exceptional.
+                                </p>
+                            </div>
+                        </div>
+                    </section>
+
+            </section>
+
+        </div>
+    </div>
+
+    <!-- <section class="cs--page__wrapper" id="realFullscreen"> -->
+        <!-- <div class="cs--page--title">Code Samples</div> -->
+        <!-- <i class="fa-duotone fa-code cic--logo cs--cic-logo"></i> -->
+        <!-- <img class="cs--painted--code" src="./assets/code-paintsplash-1x.png" alt="painted code logo"> -->
+        <!-- <div class="code-samples-list__wrapper"> -->
+            <!-- <ul class="code-samples-list"> -->
+                <!-- <li><a href="./hover-effect-samples.html">Hover Effects</a></li> -->
+                <!-- <li><a href="./particles-sample.html">Particle Effects</a></li> -->
+                <!-- <li><a href=""></a></li> -->
+                <!-- <li><a href=""></a></li> -->
+            <!-- </ul> -->
+        <!-- </div> -->
+    <!-- </section> -->
+
+<!-- begin footer inject -->
+<include src="partial_globalfooter.html" ></include>
+<!-- end footer inject -->
+</body>
+
+</html>

@@ -3,8 +3,10 @@
 import "bun";
 import { $, build , FileSink, BunFile, Transpiler} from "bun";
 import { readdir, stat, unlink, rmdir, mkdir, writeFile } from "fs/promises";
-import { join, relative, dirname, extname } from "path";
+import path, { join, relative, dirname, extname } from "path";
 import { transform, browserslistToTargets, Features } from 'lightningcss';
+import posthtml from 'posthtml';
+import include from 'posthtml-include';
 import { transformAssets } from "./bun_transformassets";
 import { transformJS } from "./bun_transformJS";
 import { transformCSS } from "./bun_transformCSS";
@@ -17,7 +19,7 @@ process.on('uncaughtException', (error) => {
   console.error('Uncaught Exception:', error);
 });
 
-//intent is parallelism and not passing all async ops simulataneously, 
+//intent is parallelism and not passing all async ops simultaneously, 
 async function getAllFiles(dir: string): Promise<string[]> {
   const files = await readdir(dir, { withFileTypes: true });
   const allFilesPromises = files.map(async (entry) => {
@@ -39,45 +41,63 @@ async function copyHTMLFiles(srcDir: string, distDir: string) {
     const relativePath = relative(srcDir, file);
     const destPath = join(distDir, relativePath);
     await mkdir(dirname(destPath), { recursive: true });
-    await Bun.write(destPath, Bun.file(file));
+    let htmlContent = await Bun.file(file).text();
+    // process HTML with posthtml
+    const result = await posthtml([
+      include({ 
+        root: path.join(srcDir, './partials') ,
+        // root: srcDir,
+        onError: (error) => {
+          console.error(`Error including partial: ${error.message}`);
+        }
+      })
+    ]).process(htmlContent);
+      htmlContent = result.html;
+      htmlContent = htmlContent
+      .replace(/\.scss/g, '.css')
+      .replace(/\.\/scss\//g, './css/')
+      htmlContent = htmlContent
+      .replace(/\.ts/g, '.js')
+      .replace(/\.\/ts\//g, './js/')
+      // added this concatted script to make sure that if we linked to ts it will replace with JS and read from the correct folder
+      await Bun.write(destPath, htmlContent);
+  // await Bun.write(destPath, Bun.file(file));
   }
   console.log("HTML files copied successfully!");
 }
 
 
 export async function buildProject() {
+  console.log('-------------------------------------------------------------- buildProject');
   const srcDir = "./src";
   const distDir = "./dist";
-  const assetsDir = "./assets"; // New location for assets
+  const assetsDir = "./assets";
   const cache = new Map<string, number>();
 
   try {
-    await $`mkdir -p ${distDir}`;
+    if (!await Bun.file(distDir).exists()) {
+      await $`mkdir -p ${distDir}`;
+    }
 
     const allSrcFiles = await getAllFiles(srcDir);
     const entrypoints = allSrcFiles.filter(file =>
       file.startsWith(join(srcDir, "ts")) && (file.endsWith(".ts") || file.endsWith(".js"))
     );
     
-    // const entrypoints = [`${srcDir}/ts/**/*.ts`];
     console.log("Entrypoints:", entrypoints);
+    // await build({
+    //   entrypoints,
+    //   outdir: distDir,
+    //   target: "browser",
+    //   format: "esm",
+    //   sourcemap: "none",
+    //   minify: { whitespace: true, identifiers: true, syntax: true },
+    //   root: srcDir,
+    // });
 
-    await build({
-      entrypoints,
-      outdir: distDir,
-      target: "browser",
-      format: "esm",
-      sourcemap: "none",
-      minify: { whitespace: true, identifiers: true, syntax: true },
-      root: srcDir,
-    });
-    for (const file of allSrcFiles) {
-      const relativePath = relative(srcDir, file);
-      const destPath = join(distDir, relativePath);
-      
-    await mkdir(dirname(destPath), { recursive: true });
     console.log("Starting HTML file copy...");
     await copyHTMLFiles(srcDir, distDir);
+
     console.log("Starting asset transformation...");
     await transformAssets(`./assets`, `${distDir}/assets`);
 
@@ -89,11 +109,11 @@ export async function buildProject() {
 
     console.log("Build completed successfully!");
   } 
-}
   catch (error) {
     console.error("Build failed:", error);
   }
 }
+
 
 // async function catchErrors() {
   //add

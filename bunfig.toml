@@ -1,4 +1,4 @@
-preload = ["./bun_preload.ts"]
+preload = ["./globresolver.ts", "./bun_preload.ts"]
 [install]
 saveLockfileTo = "bun.lock"
 

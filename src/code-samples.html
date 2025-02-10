@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- meta data-->
+    <meta charset="utf-8">
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="website" />
+    <title> Code Samples | Portfolio | Color In Code </title>
+    <meta name="description" content="Color In Code is a full service web development company serving small, medium, enterprise business; code samples page.">
+    <meta property="keywords" content="color in code, web developer, web design, web designer, code snippets, web development examples, code showcase, developer portfolio, coding techniques, programming examples, frontend code samples">
+    <meta property="og:title" content="Color in Code Portfolio: Code Samples." />
+    <meta property="og:description" content="Color In Code is a full service web development company serving small, medium, enterprise business; code samples page." />
+    <meta property="og:url" content="http://colorincode.me" />
+    <meta property="og:site_name" content="Color In Code | Portfolio | Web Development and Graphic Design" />
+    <meta name="geo.region" content="United States (US)" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="canonical" href="https://colorincode.me/portfolio/code-samples.html" />
+    <link rel="icon" href="https://colorincode.me/favicon.ico" sizes="any">
+    <link rel="icon" href="https://colorincode.me/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="https://colorincode.me/icon.png">
+    <link rel="icon" type="image/png" href="https://colorincode.me/favicon-96x96.png" sizes="96x96" />
+    <meta name="apple-mobile-web-app-title" content="Color in Code" />
+    <link rel="manifest" href="https://colorincode.me/webmanifest.json" />
+    <meta property="og:image" content="https://colorincode.me/assets/hexagon-background-dark.jpg" />
+    <meta property="og:image:width" content="1920" />
+    <meta property="og:image:height" content="1080" />
+    <meta property="og:image:type" content="image/jpg" />
+    <!-- sitewide font call-->
+    <link rel="stylesheet" href="https://use.typekit.net/vyz7xic.css">
+    <link rel="stylesheet" href="https://use.typekit.net/piq5ctv.css">
+    <link rel="stylesheet" href="https://use.typekit.net/jcm3jdf.css">
+    <script src="https://kit.fontawesome.com/e56bb8c3d5.js" crossorigin="anonymous"></script>
+    <!--main stylesheet call-->
+    <link rel="stylesheet" href="./scss/style.scss" />
+    <!-- main JS call, JS here will bubble make sure if superseding JS exists it goes at bottom -->
+    <!-- reveal child theme-->
+    <link rel="stylesheet" href="./scss/colorincoderevealtheme.scss">
+    <!-- child stylesheet for the page-->
+    <link rel="stylesheet" href="./scss/code-samples.scss" />
+    <script type="module" src="./ts/code-samples.ts"></script>
+    <script type="module" src="./ts/app.ts" defer></script>
+</head>
+
+<body class="code-samples">
+<!-- begin header inject -->
+<include src="partial_globalheader.html" ></include>
+<include src="navbar.html" ></include>
+<!-- end header inject -->
+
+    <!--start lead section-->
+    <div class="slide-in-thingy_wrapper">
+        <div class="slide-in-thingy-text_wrapper">
+            <a href="/portfolio" id="slideInThingyColor" class="slide-in-thingy-text">Portfolio Home |</a>
+            <a href="/portfolio/code-samples.html" class="slide-in-thingy-text cs--page--title" > &nbsp; Code Samples </a>
+        </div>
+    </div>
+    <!-- end lead section-->
+    <div class="reveal">
+        <div class="slides">
+            <section id="category-slide" data-slide-name="Category Selection" data-slide-color="#202324">
+                <section class="portfoliopagegrid__wrapper">
+                    <!-- <div class="particles__wrapper"> 
+                        <div class="small-particles"></div>
+                        <div class="particle medium-particles"></div>
+                        <div class="particle large-particles"></div>
+                    </div> -->
+                    <div class="cs--intro--page__wrapper">
+                        <h1 class="cs--page--title">Code Samples &amp; Examples</h1>
+                        <img class="cs--painted--code" src="./assets/code-paintsplash-1x.png" alt="code samples page">
+                        <div class="code-samples-list__wrapper">
+                            <!--duplicated begin-->
+                            <ul class="code-samples-list">
+                                <li><a href="./code-samples.html#Repositories">Public Repositories</a></li>
+                                <li><a href="./sphere.html">Sphere Concept Sample (three.js)</a></li>
+                            </ul>
+                        </div>
+                        <div class="code-samples-list__wrapper">
+                            <!--duplicated begin-->
+                        <ul class="code-samples-list">
+                            <li><a href="./code-samples.html#/1">Hover Effects</a></li>
+                            <li><a href="./code-samples.html#/2">Particle Effects</a></li>
+                        </ul>
+                        </div>
+                    </div>
+                </section>
+            </section>
+            
+            <section>
+                <section data-background="#ffffff">
+                    <div class="he--wrapper__wrapper">
+                        <div class="he--title-and-description__wrapper">
+                            <h1 class="he--title">Pure CSS Hover Effects</h1>
+                            <p class="he--description">Using a little-known CSS technique one can avoid using Javascript for many CSS effects. This means user computer resources are left for other elements of the site that truly require them. Sites load faster for users with new and old computers alike. Typically, hover classes are applied to the same element that is hovered, in this instance however, the wrapper is hovered and a different element is affected. This is achieved using a specific syntax of class chaining. In the portion of CSS below, The wrapper class in its hover state is triggering the circle class to be in its hovered state, as if that circle class is itself being hovered. The same parent class can be used to trigger as many elements as required for the desired effect. Check out some different examples of hover effects you can achieve with this method.</p>
+                            <p class="he--code--example"> ".circle--card__wrapper:hover .circle--hover--effect" </p>
+                        
+                        </div>
+                    </div>
+                    <div class="he--see--examples__wrapper">
+                        <a class="he--see--examples" href="./code-samples.html#/first-typing-trigger">
+                            <p class="he--see--examples--text">See Examples</p>
+                            <i class="he--samples--arrow fa-light fa-caret-down"></i>
+                        </a>
+                    </div>
+                </section>
+                
+                <section data-background="#ffffff" id="first-typing-trigger">
+                    <div class="cs--reveal__container">
+                        <div class="cs--code--card__wrapper">
+                            <i class="fa-regular fa-code-simple fa-fw cs--codeblock--icon"></i>
+                            <pre class="cs--codeblock--text" id="csCodeblockOne"></pre>
+                        </div>    
+
+                        <div class="cs--circle--card__wrapper">
+                            <div class="cs--card--icon--wrapper">
+                                <div class="cs--circle--card--icon--background">
+                                    <i class="fa-regular fa-circle fa-fw cs--icons"></i>
+                                </div>
+                                <div class="cs--circle--hover--effect"></div>
+                            </div>
+                            <p class="about--card-titles">Expanding Circle</p>
+                            <p class="about--card--descriptions">One of our favorite hover effects. When the text box is hovered, the circle
+                                grows and fills the box with color.
+                        </div>
+                    </div>
+                </section>
+                
+                <section data-background="#ffffff" id="second-typing-trigger">
+                    <div class="cs--reveal__container">
+                        <div class="cs--code--card__wrapper">
+                            <i class="fa-regular fa-code-simple fa-fw cs--codeblock--icon"></i>
+                            <pre class="cs--codeblock--text" id="csCodeblockTwo"></pre>
+                        </div>    
+
+                        <div class="cs--double--circle--card__wrapper"> 
+                            <div class="cs--card--icon--wrapper">
+                                <div class="cs--double--circle--card--icon--background">
+                                    <i class="fa-regular fa-circles-overlap fa-fw cs--icons cs--double--circle--icon--offset"></i>
+                                </div>
+                                <div class="cs--first--circle--hover--effect"></div>
+                                <div class="cs--second--circle--hover--effect"></div>
+                            </div>
+                            <p class="about--card-titles">Double Circle</p>
+                            <p class="about--card--descriptions">A variation of the previous hover effect; this effect takes advantage of two circles to create a ripple effect for a novel UX.
+                        </div>
+                    </div>
+                </section>
+                <section data-background="#ffffff" id="third-typing-trigger">
+                    <div class="cs--reveal__container">
+                        <div class="cs--code--card__wrapper">
+                            <i class="fa-regular fa-code-simple fa-fw cs--codeblock--icon"></i>
+                            <pre class="cs--codeblock--text" id="csCodeblockThree"></pre>
+                        </div>    
+
+                        <div class="cs--square--card__wrapper">
+                            <div class="cs--card--icon--wrapper">
+                                <div class="cs--square--card--icon--background">
+                                    <i class="fa-regular fa-cubes fa-fw cs--icons"></i>
+                                </div>
+                                <div class="cs--square--hover--effect"></div>
+                            </div>
+                            <p class="about--card-titles">Square Icon</p>
+                            <p class="about--card--descriptions">Similar to the expanding circle cards but using a square to illustrate the versatility; this effect can be applied using the same method as the other examples.
+                        </div>
+                    </div>
+                </section>
+                <section data-background="#ffffff" id="fourth-typing-trigger">
+                    <div class="cs--reveal__container">
+                        <div class="cs--code--card__wrapper">
+                            <i class="fa-regular fa-code-simple fa-fw cs--codeblock--icon"></i>
+                            <pre class="cs--codeblock--text" id="csCodeblockFour"></pre>
+                        </div>    
+
+                        <div class="icononly--card__wrapper">
+                            <div class="icononly--card--icon--wrapper">
+                                <div class="icononly--card--icon--background">
+                                    <i class="fa-regular fa-arrow-up fa-fw cs--icons"></i>
+                                </div>
+                                <div class="icononly--hover--effect"></div>
+                            </div>
+                            <p class="text--fade--in about--card-titles">Hover Reveal</p>
+                            <p class="text--fade--in about--card--descriptions">A more dynamic variation. When the card is hovered the content is revealed.</p>
+                        </div>
+                    </div>
+                </section>
+            </section>
+
+            <section data-background="#ffffff">
+                <div class="particle--samples__wrapper">
+
+                    <div class="particle--section--one">
+                        <div class="particle-container">
+                            <div class="particles">
+                                <span class="circle"></span>
+                                <span class="circle 1"></span>
+                                <span class="circle 2"></span>
+                                <span class="circle 3"></span>
+                                <span class="circle 4"></span>
+                                <span class="circle 5"></span>
+                                <span class="circle 6"></span>
+                                <span class="circle 7"></span>
+                                <span class="circle 8"></span>
+                                <span class="circle 9"></span>
+                                <span class="circle 10"></span>
+                                <span class="circle 11"></span>
+                                <span class="circle 12"></span>
+                                <span class="circle 13"></span>
+                                <span class="circle 14"></span>
+                                <span class="circle 15"></span>
+                                <span class="circle 16"></span>
+                                <span class="circle 17"></span>
+                                <span class="circle 18"></span>
+                                <span class="circle 19"></span>
+                                <span class="circle 20"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="particle--section--two">
+                        <div class="stars"></div>
+                        <div class="stars2"></div>
+                        <div class="stars3"></div>
+                        <div class="twinkling--star--base twinkling--star--one"></div>
+                        <div class="twinkling--star--base twinkling--star--two"></div>
+                        <div class="twinkling--star--base twinkling--star--three"></div>
+                        <div class="twinkling--star--base twinkling--star--four"></div>
+                        <div class="twinkling--star--base twinkling--star--five"></div>
+                        <div class="twinkling--star--base twinkling--star--six"></div>
+                        <div class="twinkling--star--base twinkling--star--seven"></div>
+                        <div class="twinkling--star--base twinkling--star--eight"></div>
+                        <div class="twinkling--star--base twinkling--star--nine"></div>
+                        <div class="twinkling--star--base twinkling--star--ten"></div>
+                    </div>
+
+                    <div class="particle--section--three">
+                        <div class="small--rising--particles"></div>
+                        <div class="medium--rising--particles"></div>
+                        <div class="large--rising--particles"></div>
+                    </div>
+
+                    <div class="particle--section--four">
+                        <div class="bottom-particles"></div>
+                    </div>
+
+                </div>
+            </section>
+
+            <section data-background="#ffffff" id="Repositories">
+
+                <h4 class="cs--page--title cic--grey"> Repositories</h4>
+                <!-- <ul>
+                    <li><a href="https://github.com/ColorInCodeMe/colorincode-parcelboilerplate">ParcelJS Build Boilerplate (uses node, npm, parcelJS fork, SCSS, Typescript, HTML) </a> </li>
+                </ul> -->
+
+                <div class="project-links_wrapper">
+                    <div class="project-links">
+                        <a href="https://github.com/ColorInCodeMe/colorincode-parcelboilerplate" class="project-titles sub-section-titles cic--purple-text">ParcelJS Build Boilerplate (uses node, npm, parcelJS fork, SCSS, Typescript, HTML)</a>
+                        <div class="fontawesome-arrow_wrapper"><i class="fa-light fa-arrow-up-right-from-square fa-fw cic--purple-text cic-project-arrow"></i></div>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/ColorInCodeMe/colorincode-parcelboilerplate" class="project-titles sub-section-titles cic--purple-text">Bun Build Boilerplate (uses node, bun, SCSS, Typescript, HTML, Biome JS)</a>
+                        <div class="fontawesome-arrow_wrapper"><i class="fa-thin fa-angle-right fa-fw fontawesome-arrow cic--purple-text cic-project-arrow"></i></div>
+                    </div>
+                    <div class="project-links">
+                        <p class="project-titles">more code samples coming soon</p>
+                        <div class="fontawesome-arrow_wrapper"><i class="fa-thin fa-angle-right fa-fw fontawesome-arrow"></i></div>
+                    </div>
+                    <!-- <div class="project-links">
+                        <p class="project-titles">Kat Kits</p>
+                        <div class="fontawesome-arrow_wrapper"><i class="fa-thin fa-angle-right fa-fw fontawesome-arrow"></i></div>
+                    </div>
+                    <div class="project-links">
+                        <p class="project-titles">WiWi</p>
+                        <div class="fontawesome-arrow_wrapper"><i class="fa-thin fa-angle-right fa-fw fontawesome-arrow"></i></div>
+                    </div>
+                    <div class="project-links">
+                        <p class="project-titles">Creme Betweens</p>
+                        <div class="fontawesome-arrow_wrapper"><i class="fa-thin fa-angle-right fa-fw fontawesome-arrow"></i></div>
+                    </div> -->
+                </div>
+
+            </section>        
+
+        </div>
+    </div>
+
+    <!-- <section class="cs--page__wrapper" id="realFullscreen"> -->
+        <!-- <div class="cs--page--title">Code Samples</div> -->
+        <!-- <i class="fa-duotone fa-code cic--logo cs--cic-logo"></i> -->
+        <!-- <img class="cs--painted--code" src="./assets/code-paintsplash-1x.png" alt="painted code logo"> -->
+        <!-- <div class="code-samples-list__wrapper"> -->
+            <!-- <ul class="code-samples-list"> -->
+                <!-- <li><a href="./hover-effect-samples.html">Hover Effects</a></li> -->
+                <!-- <li><a href="./particles-sample.html">Particle Effects</a></li> -->
+                <!-- <li><a href=""></a></li> -->
+                <!-- <li><a href=""></a></li> -->
+            <!-- </ul> -->
+        <!-- </div> -->
+    <!-- </section> -->
+
+<!-- begin footer inject -->
+<include src="partial_globalfooter.html" ></include>
+<!-- end footer inject -->
+</body>
+
+</html>
