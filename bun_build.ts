@@ -56,9 +56,9 @@ async function copyHTMLFiles(srcDir: string, distDir: string) {
       htmlContent = htmlContent
       .replace(/\.scss/g, '.css')
       .replace(/\.\/scss\//g, './css/')
-      // htmlContent = htmlContent
-      // .replace(/\.ts/g, '.js')
-      // .replace(/\.\/ts\//g, './js/')
+      htmlContent = htmlContent
+      .replace(/\.ts/g, '.js')
+      .replace(/\.\/ts\//g, './js/')
       // added this concatted script to make sure that if we linked to ts it will replace with JS and read from the correct folder
       await Bun.write(destPath, htmlContent);
   // await Bun.write(destPath, Bun.file(file));

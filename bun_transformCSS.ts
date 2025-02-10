@@ -68,14 +68,14 @@ export async function transformCSS(inputDir: string, outputDir: string) {
             sourceMap: false,
           });
           cssContent = result.css;
-          
+
         } else {
           cssContent = await Bun.file(inputPath).text();
         }
 
         await mkdir(dirname(outputPath), { recursive: true });
         await Bun.write(outputPath, cssContent);
-        console.log(`Processed: ${outputPath}`);
+        console.log("Processed:", files.length);
 
         processedFiles.add(inputPath);
       } catch (error) {

@@ -1,6 +1,7 @@
 import { $, build , FileSink, BunFile, Transpiler} from "bun";
 import { readdir, stat, unlink, rmdir, mkdir, writeFile } from "fs/promises";
 import * as fs from 'fs';
+import { glob } from "glob";
 import path, { join, relative, dirname, extname } from "path";
 // Bun.plugin(globResolverPlugin());
 const fileCache = new Map<string, number>();
@@ -13,7 +14,7 @@ async function getAllFiles(dir: string): Promise<string[]> {
   const entries = await readdir(dir, { withFileTypes: true });
   const files = await Promise.all(
     entries.map(async (entry) => {
-      const fullPath = path.join(dir, entry.name);
+      const fullPath = srcDir;
       return entry.isDirectory() ? getAllFiles(fullPath) : [fullPath];
     })
   );
@@ -21,18 +22,22 @@ async function getAllFiles(dir: string): Promise<string[]> {
 }
 
 export async function transformJS(srcDir: string, outDir: string) {
-  const allFiles = await getAllFiles(srcDir);
-  const tsFiles = allFiles.filter(file => file.endsWith('.ts') && !file.endsWith('.d.ts'));
+  const tsFiles = await glob("src/**/*.ts", { ignore: ["**/*.d.ts"] });
 
   console.log("Transforming TypeScript files:", tsFiles.length);
 
-  const result = await build({
-    entrypoints: ['tsFiles'],
-    outdir: './dist',
-    target: "bun",
+  const result = await Bun.build({
+    entrypoints: tsFiles,
+    outdir: outDir,
+    root: srcDir,
+    target: "browser",
     format: "esm",
     sourcemap: "none",
     minify: true,
+    naming: {
+      entry: "[dir]/[name].[ext]",
+      chunk: "[name]-[hash].[ext]",
+    },
   });
 
   if (!result.success) {
@@ -42,6 +47,10 @@ export async function transformJS(srcDir: string, outDir: string) {
 
   console.log("TypeScript files successfully transformed to JavaScript.");
 }
+
+
+// Run the transformation
+// transformJS(srcDir, outDir).catch(console.error);
 
 // Run the transformation
 
