@@ -1,0 +1,240 @@
+@use './helpers.scss' as *;
+
+//========================================================================== globals
+body {
+    margin: 0;
+    padding: 0;
+    background: #fff;
+}
+* {
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+}
+section {
+    margin: 0;
+    padding: 0;
+}
+.title--section__wrapper {
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin: 52px 0 0 0;
+    padding: 20px 0 0 0;
+    @media only screen and (max-width: 860px) {
+        padding: 100px 0 0 0;
+    }
+}
+.email-samples-page-title {
+    color: var(--indigo-dye);
+}
+
+//========================================================================== particles
+.particle--section__wrapper {
+    top: 0;
+    position: absolute;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    width:100%;
+    height: 100%;
+}
+.particle--section--three{
+    position: absolute;
+    background:0 0;
+    width:100%;
+    height:100%;
+    overflow:hidden;
+}
+.small--rising--particles{
+    height:3px;
+    width:3px;
+    border-radius:50%;
+    animation:150s linear infinite particleAnimate
+}
+.medium--rising--particles{
+    height:6px;
+    width:6px;
+    border-radius:50%;
+    animation:250s linear infinite particleAnimate
+}
+.large--rising--particles{
+    height:9px;
+    width:9px;
+    border-radius:50%;
+    animation:350s linear infinite particleAnimate
+}
+    @keyframes particleAnimate{from{transform:translateY(0)}to{transform:translateY(-3840px)}}
+    @keyframes gelatine{from,to{transform:scale(1,1)}25%{transform:scale(1,1.04)}50%{transform:scale(1,.98)}75%{transform:scale(1,1.08)}
+}
+
+//========================================================================== email grid section
+.comp--page--main__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+.comp--mason__wrapper {
+    --spacing: 40px;
+    width: calc(100% - (var(--spacing) * 2) );
+    margin: var(--spacing);
+    grid-gap: var(--spacing);
+    display: grid;
+    grid-template-columns: repeat(6, auto);
+    grid-auto-rows: 1fr;
+    @media only screen and (max-width: 1280px) {
+        grid-template-columns: repeat(4, auto);
+        grid-auto-rows: 1fr;
+        --spacing: 30px;
+    }
+    @media only screen and (max-width: 768px) {
+        grid-template-columns: repeat(2, auto);
+        grid-auto-rows: 1fr;
+        --spacing: 15px;
+    }
+}
+.comp--item {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    background: #ffffffa1;
+    backdrop-filter: blur(2px);
+    border: 1px solid var(--indigo-dye);
+    width: calc(100% - 2px);
+    color: #fff;
+    grid-column-start: auto;
+    grid-row-start: auto;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: .5em;
+    // box-shadow: -2px 2px 10px 0px rgba(#444, 0.4);
+    grid-column: span 1;
+    grid-row: span 1;
+    box-shadow: 10px 10px 5px transparent;
+    transition: all 900ms ease-in-out;
+}
+.comp--item:hover {
+    border-image-source: repeating-linear-gradient(to bottom, var(--sky-blue-crayola), var(--indigo-dye)) ;
+    border-radius: .5em;
+    background-clip: border-box;
+}
+.comp--item::before {
+    position: absolute;
+    content: "";
+    width: calc(100% + 2px); //can adjust these up for more flair
+    height: calc(100% + 2px);
+    left: -2px;
+    top: -2px;
+    border-top-left-radius: .5em;
+    border-bottom-left-radius: .5em;
+    background: linear-gradient(
+      125deg,
+      var(--blue-munsell),
+      var(--indigo-dye),
+      var(--sky-blue-crayola),
+  
+    );
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(3px);
+    animation: move 40s linear infinite;
+    opacity: 0;
+    transition: opacity 900ms ease-in-out;
+    border-radius: .5em;
+ 
+}
+  
+.comp--item:hover::before {
+    opacity: 1;
+}
+.comp--item::after {
+    border-image-source: repeating-linear-gradient(to bottom, var(--sky-blue-crayola), var(--indigo-dye)) ;
+    border-image-slice: 5;
+    border-width: 2px;
+    border-radius: .5em;
+    z-index: -1;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #fffffffb;
+    left: 0;
+    top: 0;
+}
+.icon--images__atag {
+    text-decoration: none;
+
+}
+.text--image__wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: .5em;
+    overflow: hidden;
+    padding: 20px;
+    padding-bottom: 10px;
+}
+.icon-images {
+    box-sizing: content-box;
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.imagelink--ptag {
+    margin: 0;
+    padding-top: 10px;
+    white-space: nowrap;
+    font-family: rift, sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    text-decoration: none;
+    color:  var(--indigo-dye);
+    text-decoration: none;
+    text-align: center;
+    @media only screen and (min-width: 1750px) {
+        font-size: 24px;
+    }
+    @media only screen and (max-width: 1280px) {
+        font-size: 20px;
+    }
+    @media only screen and (max-width: 834px) {
+        font-size: 18px;
+    }
+    @media only screen and (max-width: 768px) {
+        font-size: 20px;
+    }
+}
+.imagelink--pta:hover {
+    color: var(--blue-munsell);
+}
+
+//========================================================================== globalfooter reset
+.global__footerwrapper {
+    position:  relative!important;
+}
+
+//========================================================================== keyframes
+@keyframes move {
+    0% {
+      background-position: 0 0;
+    }
+    25% {
+        background-position: 220% 0;
+      }
+    50% {
+      background-position: 400% 0;
+    }
+    75% {
+        background-position: 220% 0;
+      }
+    100% {
+      background-position: 0 0;
+    }
+  }

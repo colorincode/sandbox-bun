@@ -1,0 +1,33 @@
+//typekit, import all links
+@import url("https://use.typekit.net/vyz7xic.css");
+@import url("https://use.typekit.net/jcm3jdf.css");
+// import, not forward has to be used, otherwise your build will fail!! shame! shame! shame! 
+// importing core styling file
+// @import './fontawesome6-pro/fontawesome.scss';
+// // functions has to be loaded first,  otherwise your build will fail!! shame! shame! shame! 
+// @import "./fontawesome6-pro/_functions.scss";
+// @import "./fontawesome6-pro/_variables.scss";
+// @import "./fontawesome6-pro/_mixins.scss";
+// @import "./fontawesome6-pro/core.scss";
+
+// // partials, load them after vars, mixins, functions, core, otherwise your build will fail!! shame! shame! shame! 
+// @import "./fontawesome6-pro/_stacked.scss";
+// @import "./fontawesome6-pro/_list.scss";
+// @import "./fontawesome6-pro/_icons.scss";
+// // @import "./fontawesome6-pro/_animated.scss";
+// @import "./fontawesome6-pro/_sizing.scss";
+
+
+// // For Duotones you need both of these files
+// @import "./fontawesome6-pro/duotone.scss";
+// @import "./fontawesome6-pro/_duotone-icons.scss";
+
+// // these are brand/light/solid/regular styles, load them after your others, otherwise your build will fail!! shame! shame! shame!
+// @import "./fontawesome6-pro/thin.scss";
+// @import "./fontawesome6-pro/light.scss";
+// @import "./fontawesome6-pro/solid.scss";
+// @import "./fontawesome6-pro/brands.scss";
+// @import "./fontawesome6-pro/regular.scss";
+// @import "./fontawesome6-pro/sharp-light.scss";
+// @import "./fontawesome6-pro/sharp-solid.scss";
+// @import "./fontawesome6-pro/sharp-regular.scss";

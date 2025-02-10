@@ -1,0 +1,241 @@
+@use 'sass:math';
+@use "sass:color";
+@use "sass:list";
+@use "sass:string";
+@use './helpers.scss' as *;
+// @use * as 
+@forward "./colorincoderevealtheme.scss";
+* {
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+}
+body {
+    margin: 0;
+    padding: 0;
+    object-fit: contain;
+    background-attachment: fixed;
+    background-position: 50% 50%;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    font-family: "articulat-cf", sans-serif;
+    font-style: normal;
+    font-display: swap;
+    display: grid;
+}
+h2 {
+    color: #7e7e7e;
+    text-transform: uppercase;
+    font-size: clamp(1.75rem, 0.8vw, 1.25rem);
+}
+.slide-in-thingy_wrapper {
+    top: 80px;
+    @media screen and (max-width:767px) {
+      top: 80px;
+    }
+}
+
+// _______________________________________________________________________________________________________ used
+.portfoliopagegrid__wrapper {
+    --hdr-gradient: radial-gradient(
+        farthest-corner circle at 100% 0% in oklab,
+        oklch(68% .4 222) 0%, oklch(35% .5 313) 100%
+      );
+    background: var(--hdr-gradient),url("../assets/desat-prod-invert-bg-black.jpg");
+    background-size: contain;
+    background-blend-mode: overlay;
+}
+.cs--intro--page__wrapper {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    box-sizing: border-box;
+    overflow: hidden;
+    @media screen and (max-width:1268px) {
+        flex-direction: column;
+        height: 90%;
+    }
+}
+.cs--page--title {
+    color: #73db93;
+    font-family: "rift",sans-serif;
+    font-weight: 500;
+}
+.cs--painted--code {
+    position: absolute;
+    margin-top: auto;
+    margin-bottom: auto;
+    left: 0;
+    display: flex;
+    height: 70%;
+    mix-blend-mode: overlay;
+    @media screen and (max-width:968px) {
+        height: 40%;
+    }
+    @media screen and (min-width:2068px) {
+        height: 50%;
+    }
+}
+.code-samples-list__wrapper {
+    --hdr-gradient:linear-gradient(134deg in oklab,rgba(12, 170, 59, 0.94) 0%,rgba(154, 255, 184, 0.94) 100%);
+	display: flex;
+	flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 33%;
+    min-height: 250px;
+    min-width: 120px;
+    background:var(--hdr-gradient),url("../assets/desat-prod-invert-bg-black.jpg");
+    background-blend-mode: overlay;
+    background-size: cover;
+    background-position: 150%;
+    opacity: 0.9;
+    border: 1px solid rgba(179, 247, 200, 0.984);
+    border-radius: 15px;
+	box-shadow: 0 3px 30px hsla(120, 2%, 33%, 0.337);
+	backdrop-filter: blur(13px);
+    
+    font-size: clamp(1rem, 1vw, 1.85rem);
+    @media screen and (max-width:768px) {
+       width: 70%;
+       margin: 0 auto;
+    }
+}
+.code-samples-list {
+	list-style: none;
+	padding: 0;
+	margin: 25px;
+	text-align: center;
+}
+
+// _______________________________________________________________________________________________________ slide containers
+.he--wrapper__wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    --hdr-gradient:linear-gradient(134deg in oklab,rgba(223, 249, 231, 0.94) 0%,rgba(154, 255, 184, 0.94) 100%);
+    background:var(--hdr-gradient),url("../assets/desat-prod-invert-bg-lighter.jpg");
+    background-blend-mode: overlay;
+    background-size: cover;
+    background-position: 150%;
+}
+.he--title-and-description__wrapper {
+    --more-gradient:linear-gradient(134deg in oklab,rgba(205, 235, 213, 0.94) 0%,rgba(202, 249, 216, 0.94) 100%);
+    width: 80%;
+    max-width: 1268px;
+    min-height: 50%;
+    padding: 3%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    font-family: "articulat-cf", sans-serif;
+    background:var(--more-gradient),url("../assets/desat-prod-invert-bg-lighter.jpg");
+    background-blend-mode: overlay;
+    background-size: cover;
+    background-position: 100%;
+    // opacity: 0.9;
+    // border: 1px solid red;
+    border-radius: 15px;
+	// box-shadow: 0 3px 20px hsla(120, 63%, 83%, 0.629);
+	backdrop-filter: blur(13px);
+}
+.he--description {
+    color: var(--cool-grey);
+    z-index: 4;
+    font-family: "articulat-cf", sans-serif;
+    font-size: clamp(1rem, 1vw, 1.25rem);
+    font-weight: 500;
+    line-height: 1.5;
+    margin: 1.5rem;
+    text-align: center;
+    -webkit-font-smoothing: subpixel-antialiased;
+    font-display: swap;
+    transition: all 0.5s ease-in-out;
+    @media screen and (max-width:1024px) and (min-width:741px) {
+        font-size: 1rem;
+        line-height: 1rem;
+        margin: 2rem;
+    }
+    @media screen and (max-width:740px) {
+        font-size: 1rem;
+        line-height: 1rem;
+        margin: 1.5rem;
+    }
+}
+.grayswan--image {
+    width: 100%;
+    height: auto;
+    opacity: 1;
+}
+
+// _______________________________________________________________________________________________________ AI Red Team
+.red-team-title {
+    color: #0caa3b;
+    @media screen and (max-width:740px) {
+        font-size: 1.75rem;
+    }
+}
+
+// _______________________________________________________________________________________________________ AI Red Team
+.spg-title {
+    color: #2ed2ef;
+}
+
+// _______________________________________________________________________________________________________ next slide prompt
+.he--see--examples__wrapper {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    bottom: 0;
+    width: 100%;
+    @media screen and (max-width: 1281px) {
+        padding: 5px;
+    }
+}
+.he--see--examples {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    transition: all 2s ease-in-out;
+}
+.he--see--examples:hover .he--see--examples--text {
+    transform: scale(1.05);
+    color: #0caa3baf;
+}
+.he--see--examples:hover .he--samples--arrow {
+    transform: scale(1.05);
+    color: #0caa3baf;
+}
+.he--see--examples--text {
+    font-size: .6em;
+    padding: 10px 0 0 0;
+    margin: 0;
+    color: #000;
+    transform: scale(1);
+    transition: all 1s ease-in-out;
+    @media screen and (max-width: 1281px) {
+        font-size: .5em;
+    }
+}
+.he--samples--arrow { 
+    margin: 0;
+    padding: 0;
+    width: auto;
+    font-size: .8em;
+    color: #000;
+    transform: scale(1);
+    transition: all 1s ease-in-out;
+    animation: arrowBounce infinite 4s ease-in-out;
+    @media screen and (max-width: 1281px) {
+        font-size: .7em;
+    }
+}

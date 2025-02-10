@@ -1,0 +1,58 @@
+{
+    "short_name": "Color in Code",
+    "name": "Color in Code services",
+    "icons": [
+      {
+        "src": "https://colorincode.me/icons-vector.svg",
+        "type": "image/svg+xml",
+        "sizes": "512x512"
+      },
+      {
+        "src": "https://colorincode.me/web-app-manifest-192x192.png",
+        "type": "image/png",
+        "sizes": "192x192"
+      },
+      {
+        "src": "https://colorincode.me/web-app-manifest-512x512.png",
+        "type": "image/png",
+        "sizes": "512x512"
+      }
+    ],
+    "id": "/?source=pwa",
+    "start_url": "/?source=pwa",
+    "theme_color": "#000000",
+    "background_color": "#ffffff",
+    "display": "standalone",
+    "scope": "/",
+    "shortcuts": [
+      {
+        "name": "Portfolio",
+        "short_name": "portfolio",
+        "description": "View color in code portfolio.",
+        "url": "/portfolio?source=pwa",
+        "icons": [{ "src": "/web-app-manifest-192x192.png", "sizes": "192x192" }]
+      },
+      {
+        "name": "About us",
+        "short_name": "about",
+        "description": "View more about Color in Code",
+        "url": "/about.html?source=pwa",
+        "icons": [{ "src": "/web-app-manifest-192x192.png", "sizes": "192x192" }]
+      }
+    ],
+    "description": "Color in Code",
+    "screenshots": [
+      {
+        "src": "/assets/2-hexagon-slide.png",
+        "type": "image/png",
+        "sizes": "540x720",
+        "form_factor": "narrow"
+      },
+      {
+        "src": "/images/5-hexagon-slide-png",
+        "type": "image/png",
+        "sizes": "720x540",
+        "form_factor": "wide"
+      }
+    ]
+  }

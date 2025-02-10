@@ -1,0 +1,406 @@
+@use './helpers.scss' as *;
+
+//========================================================================== globals
+body {
+  padding: 0;
+  margin: 0;
+}
+.ai--page__wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  background-image: url('/assets/desat-prod-invert-bg.jpg');
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+  width: 100%;
+  margin-top: 52px;
+}
+.ai--section__wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.ai--section__wrapper--inner {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1268px;
+  margin: 4vh;
+  @media only screen and (max-width: 768px) {
+    margin: 10px;
+  }
+}
+.text--spacing--wrapper {
+  margin: 0 auto;
+  padding: 4vh;
+}
+.section--text {
+  color: #fff;
+  text-align: center;
+  margin: 0 auto;
+  padding: 6vh 3vw;
+  font-size: 1.5rem;
+  transition: all .5s;
+}
+.ai--end--spacing {
+  height: 12vh;
+  }
+
+//========================================================================== hero section
+.hero--section__wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  @media only screen and (max-width: 768px) {
+    flex-direction: column;
+  }
+}
+.hero__wrapperinner {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  max-width: 1268px;
+}
+.hero--text__wrapper {
+  font-family: rift, sans-serif;
+  display: flex;
+  margin-top: auto;
+  margin-bottom: auto;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.ai--hero--title {
+  margin: 0;
+  background-image: url('/assets/desat-prod-filmcopy.png');
+  font-weight: 600;
+  font-size: 10em;
+  color: transparent;
+  text-align: right;
+  background-clip: text;
+  mix-blend-mode: darken;
+  line-height: .8;
+  @media only screen and (max-width: 1028px) {
+    font-size: 7em;
+  }
+  @media only screen and (max-width: 768px) {
+    font-size: 5em;
+    line-height: 1;
+  }
+
+}
+.ai--hero--description {
+  margin: 0;
+  font-weight: 600;
+  font-size: 2em;
+  color: #a8a8a8;
+  text-align: right;
+  @media only screen and (max-width: 1028px) {
+    font-size: 1.5em;
+  }
+  @media only screen and (max-width: 768px) {
+    font-size: 1.25em;
+  }
+}
+.hero--image__wrapper {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: flex-end;
+}
+.ai--hero--image {
+  height: 100%;
+  width: auto;
+  max-height: 400px;
+  aspect-ratio: 1596 / 2021;
+  background-image: url('/assets/copper-android-transparent.png');
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  margin: 10px 10px 0 0;
+  @media only screen and (max-width: 480px) {
+    display: none;
+  }
+}
+
+//========================================================================== flex gallery
+.flex--gallery__wrapper {
+  background: #000;
+}
+.fg--section--title {
+  color: #fff;
+}
+.square--images--gallery {
+  --spacing: 20px;
+  position: relative;
+  height: 425px;
+  width: calc(100% - (var(--spacing) * 2));
+  padding: var(--spacing);
+  overflow: hidden;
+  display: flex;
+  border: 2px solid #a8a8a8;
+  border-radius: 4px;
+  @media only screen and (max-width: 1028px) {
+    height: 275px;
+  }
+  @media only screen and (max-width: 768px) {
+    --spacing: 10px;
+    height: 250px;
+  }
+}
+.square--image {
+  box-shadow: inset 0 0 0 1px #fff;
+  align-items: center;
+  transition: flex 0.5s, transform .2s;
+  background-size: cover;
+  background-position: center;
+  flex: 1;
+
+  &:hover {
+    flex-grow: 4 !important;
+    @media only screen and (max-width: 1028px) {
+      flex-grow: 3.5 !important;
+    }
+    @media only screen and (max-width: 768px) {
+      flex-grow: 8 !important;
+    }
+  }
+
+  &-1 {
+    background-image: url("/assets/ai-gen-hexagons.png");
+    @media only screen and (max-width: 768px) {
+      display: none;
+    }
+  }
+  &-2 {
+    background-image: url("/assets/ai-hot-air-baloons.png");
+  }
+  &-3 {
+    background-image: url("/assets/ai-space-ship.png");
+  }
+  &-4 {
+    background-image: url("/assets/ai-book-tree.png");
+  }
+  &-5 {
+    background-image: url("/assets/ai-dystopia.png");
+  }
+  &-6 {
+    background-image: url("/assets/ai-tree.png");
+  }
+  &-7 {
+    background-image: url("/assets/ai-stained-glass-woman.png");
+  }
+  &-8 {
+    background-image: url("/assets/ai-tower-1.png");
+  }
+  &-9 {
+    background-image: url("/assets/ai-ink-water.png");
+    @media only screen and (max-width: 768px) {
+      display: none;
+    }
+  }
+}
+.fingerprint--mobile {
+display: none;
+
+@media only screen and (max-width: 768px) {
+  display: flex;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  width: calc(100% - 20px);
+  height: calc(100% - 20px);
+  color: #fff;
+  font-size: 60px;
+  pointer-events: none;
+  backdrop-filter: blur(1px);
+}
+}
+.fade-out-fingerprint {
+animation: fingerprint-fade-out 1.5s forwards;
+}
+@keyframes fingerprint-fade-out {
+0% {
+  opacity: 1;
+}
+80% {
+  opacity: 1;
+}
+100% {
+  opacity: 0;
+}
+}
+
+//========================================================================== tim ursich section
+.tu--section__wrapper {
+  background-image: url('/assets/tu-bubbles.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top 0% 50%;
+}
+.tu--section--title {
+  color: #fff;
+}
+.tim--ursich--btn {
+  color: var(--telemagenta);
+  border: 1px solid var(--telemagenta);
+  transition: background .5s ease-in-out;
+}
+.tim--ursich--btn:hover {
+  background: #d62b7244;
+}
+
+
+.tu--mason__wrapper {
+  display: grid;
+  gap: 20px;
+  height: 1000px;
+  grid-auto-flow: row dense;
+  @media only screen and (max-width: 768px) {
+      height: 500px;
+  }
+}
+.tu--mason--item {
+  position: relative;
+  display: flex;
+  color: #fff;
+  grid-column-start: auto;
+  grid-row-start: auto;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  box-shadow: -2px 2px 10px 0px rgba(#444, 0.4);
+  
+  &:nth-of-type(1) {
+    background-image:  url('/assets/tu-space2.png');
+    background-position: top left;
+  }
+  
+  &:nth-of-type(2) {
+    background-image: url('/assets/tu-space.png');
+  }
+  
+  &:nth-of-type(3) {
+    background-image: url('/assets/tu-little-astronaut.png');
+    background-position: 30% center;
+  }
+
+  &--tall {
+      grid-column: span 2;
+      grid-row: span 4;
+      @media only screen and (max-width: 768px) {
+        grid-column: span 4;
+        grid-row: span 4;
+      }
+    }
+  
+    &--wide {
+      grid-column: span 6;
+      grid-row: span 4;
+      @media only screen and (max-width: 768px) {
+        grid-column: span 4;
+        grid-row: span 4;
+      }
+    }
+
+    &--wider {
+      grid-column: span 8;
+      grid-row: span 4;
+    }
+}
+
+//========================================================================== color in code section
+.cic--section--title {
+  color: #000;
+}
+.cic-section--text {
+  color: #000;
+}
+.cic--section--mason__wrapper {
+  display: grid;
+  gap: 20px;
+  height: 750px;
+  grid-auto-flow: column;
+  @media only screen and (max-width: 768px) {
+    height: 500px;
+  }
+}
+.cic--section--mason--item {
+  position: relative;
+  display: flex;
+  color: #fff;
+  grid-column-start: auto;
+  grid-row-start: auto;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  box-shadow: -2px 2px 10px 0px rgba(#a8a8a8, 0.4);
+  
+  &:nth-of-type(1) {
+    background-image: url('/assets/painting-robot-optimized.png');
+  }
+  
+  &:nth-of-type(2) {
+    background-image: url('/assets/doctor-robot.png');
+  }
+
+    &--tall {
+      grid-column: span 2;
+      grid-row: span 4;
+      @media only screen and (max-width: 768px) {
+        grid-column: span 4;
+        grid-row: span 4;
+      }
+    }
+  
+    &--wide {
+      grid-column: span 4;
+      grid-row: span 4;
+      @media only screen and (max-width: 768px) {
+        grid-column: span 4;
+        grid-row: span 4;
+      }
+    }
+
+    &--wider {
+      grid-column: span 8;
+      grid-row: span 4;
+    }
+}
+
+//========================================================================== copyright
+.cs--ai--copyright__wrapper {
+    position: absolute;
+    width: 99%;
+    bottom: 0;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+.cc--ai--copyrighttext {
+    text-align: center;
+    font-family: "articulat-cf", sans-serif;
+    color:#0caa3b;
+}
+.cc--ai--copyrightlink {
+    font-family: "articulat-cf", sans-serif;
+    color: #9affb8;
+    font-weight: 600;
+    text-decoration: none;
+    pointer-events: all;
+    position: relative;
+    display: inline-block;
+    transition: all 0.777s;
+}
+.cc--ai--copyrightlink:visited {
+    color: #9affb8;
+}
+
+.cc--ai--copyrightlink:hover , .cc--ai--copyrightlink:active    {
+    color: #53D57A;
+}

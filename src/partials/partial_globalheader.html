@@ -1,0 +1,127 @@
+<style>
+    .portfolio-nav-text {
+  color: #f7fcfe;
+  white-space: nowrap;
+  font-family: rift,sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  text-decoration: none;
+  display: flex;
+  @media screen and (max-width:640px) {
+    font-size: 13px;
+  }
+}
+    /* sitewide header*/
+.test--global__headerwrapper {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    z-index: 100; /* not visible on desktop if removed*/
+    backdrop-filter: blur(5px);
+
+    height:52px;
+    /* background: radial-gradient(circle, #f4eef7b7 39%, #d4bedb91 70%); */
+    /* background: rgba(6, 0, 15, 0.925); */
+    background: #000000fe;
+    /* background: linear-gradient(-45deg, var(--russian-violet) 0%, var(--royal-blue-web-color) 25%, var(--vista-blue) 51%, var(--royal-blue-web-color) 100%); */
+    pointer-events: all;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    align-items: center;
+
+    
+    @media screen and (max-width:640px) {
+      /* flex-direction: column; */
+      z-index: 100;
+      padding: 0;
+      right: 0;
+    }
+} 
+.test--global--icons--wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: calc(53vw);
+    padding-right: 0.5rem;
+}
+.test--global__headerwrapper--text {
+
+    line-height: 2;
+    color: #fff;
+    font-family: 'articulat-cf', sans-serif;
+    font-weight: 400;
+    text-decoration: none;
+    font-size: 2rem;
+    margin: 10px;
+  
+}
+/* .test--logo--global__headerwrapper {
+/*     font-size: 2em;
+/*     color: #fff;
+/* }
+/* end sitewide header*/
+
+ /*sitewide banner */
+.sitewide--banner__wrapper {
+    margin-top: 52px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+.sitewide--bannerbg {
+    backdrop-filter: blur(14px) opacity(20%);
+    -webkit-backdrop-filter: blur(14px) opacity(20%);
+    background-image: url('../assets/desat-prod-bannerbg-opaque20.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-color: #000000fe;
+ 
+}
+.test--logo--global__headerwrapper {
+    margin-right: 14px;
+    margin-top: 5px;
+     
+    @media screen and (max-width:640px) {
+     /* margin: unset; */
+     margin-right: 5px;
+    }
+}
+.mobile-margin {
+    margin-left: 30px;
+}
+@media screen and (max-width:968px) {
+.mobile-clear {
+    display: none;
+}
+}
+
+</style>
+
+<header class="test--global__headerwrapper" id="univSiteNav">
+    <div class="test--global--icons--wrapper">
+       
+        <a href="index.html" target="_blank" class="portfolio-nav-text">
+        
+            <i class="test--logo--global__headerwrapper fa-duotone fa-code fa-fw" ></i> 
+           <span class="mobile-clear">PORTFOLIO</span>
+        </a> 
+      
+        <a href="https://colorincode.me" target="_blank" class="portfolio-nav-text mobile-margin">
+           return to color in code
+        </a>
+    </div>
+   
+</header>
+<!-- sitewide banners -->
+    <!-- <section class="sitewide--banner__wrapper" id="univSiteBan">
+        <div class="sitewide--banner--one sitewide--bannerbg ">
+    
+            <div class="sitewide--banner--one--inner">
+                <h1 class="sitewide__banner--one--text ">Revamp your website with us. We are now offering AI-generated code refactoring on existing website revisions, AI chatbot and generative code consultations, and AI generations on new builds.</h1>
+                <a href="contact.html"><button class="base-btn square-btn medium-btn-desktop small-btn-mobile sitewide__banner--one--btn">Get In Touch</button></a>
+            </div>
+        </div>
+    </section> -->
+<!-- end sitewide banners -->

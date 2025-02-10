@@ -1,0 +1,8 @@
+@forward 'mixins.scss';
+@forward '_colors.scss';
+@forward 'variables.scss';
+@forward '_animations.scss';
+@forward '_components.scss';
+// importing core styling file
+@forward '_fonts.scss';
+@forward './splide-default.scss';

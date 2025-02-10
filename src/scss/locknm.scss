@@ -1,0 +1,522 @@
+:root {
+    color-scheme: dark;
+}
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden;
+    background: #F4F4F2;
+}
+h1 {
+    color: #525252;
+    margin-top: 1.33em;
+    margin-bottom: 1.33em;
+    font-family: 'Montserrat', arial, sans-serif;
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 1.25;
+    font-style: normal;
+    text-transform: uppercase;
+    @media screen and (max-width: 768px) {
+        font-size: 20px;
+    }
+}
+h2 {
+    color: #525252;
+    margin-top: 1.33em;
+    margin-bottom: 1.33em;
+    font-family: 'Montserrat', arial, sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.25;
+    font-style: normal;
+    text-align: center;
+    text-transform: uppercase;
+    @media screen and (max-width: 768px) {
+        font-size: 18px;
+    }
+}
+p {
+    font-family: 'Montserrat', arial, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #525252;
+    line-height: 1.5;
+    text-align: center;
+    padding: 20px 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+    @media screen and (max-width: 768px) {
+        font-size: 14px;
+    }
+}
+ul {
+    list-style-type: '- ';
+    -webkit-margin-after: .5em;
+            margin-block-end: .5em;
+}
+.hours-li > li {
+    font-family: 'Montserrat', arial, sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: #525252;
+    line-height: 1.5;
+    text-align: left;
+}
+.hours-table {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+
+.hours-table td {
+    font-family: 'Montserrat', arial, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #525252;
+    padding: 8px;
+    // border-bottom: 1px solid #ddd;
+}
+
+.hours-table td:first-child {
+    width: 30%;
+    text-align: left;
+}
+
+.hours-table td:last-child {
+    text-align: right;
+}
+
+.hours-table .closed {
+    text-align: right;
+}
+
+  
+.ul--services > li {
+    font-family: 'Montserrat', arial, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #525252;
+    line-height: 1.5;
+    text-align: left;
+    @media screen and (max-width: 768px) {
+        font-size: 14px;
+    }
+}
+a {
+    cursor: pointer;
+}
+// .bold--h1 {
+//     font-style: bold!important;
+//     font-family: "Archivo Black", sans-serif!important;
+//     font-weight: 400!important;
+// }
+.margin--reset {
+    margin: 0!important;
+    padding: 0!important;
+}
+.hours-li {
+    list-style: none;
+}
+.align--text--left {
+    text-align: left!important;
+}
+.p--bold {
+    font-weight: 700!important;
+}
+.text--constrain {
+    max-width: 700px;
+}
+.website--links {
+    text-decoration: none;
+    color: #969696;
+}
+.custom-popup {
+    color: #000;
+}
+
+// slide in thingy
+.slide-in-thingy_wrapper {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    right: -100%;
+    top: 80px;
+    background: #81818180;
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    border-top-left-radius: 0.35em;
+    border-bottom-left-radius: 0.35em;
+    z-index: 9999999999999999999999999999;
+    animation: slideIn 1s forwards;
+    animation-delay: .5s;
+}
+.slide-in-thingy-text_wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    margin: 5px 2em 5px 25px;
+}
+.slide-in-thingy-text {
+    font-family: 'rift',sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    color: #202324;
+    text-decoration: none;
+    white-space: nowrap;
+    display: flex;
+    margin: 15px 0;
+}
+.cs--page--title {
+    color: #2ed2ef;
+    cursor: default;
+}
+@keyframes slideIn {
+    from {
+        right: -100%; /* Start offscreen to the right */
+    }
+    to {
+        right: 0; /* End at the right edge of the screen */
+    }
+}
+// slide in thingy
+
+
+/* navbar section */
+.navbar__wrapper {
+    width: 100%;
+    display:  -webkit-box;
+    display:  -ms-flexbox;
+    display:  flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    font-family: 'Montserrat', arial, sans-serif;
+    font-style: normal;
+    font-size: 1.2em;
+    font-weight: 400;
+    line-height: 1.5;
+    padding-top: 52px;
+}
+.contact__wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+.naviocon--wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    border-radius: .3em;
+    background: #32477Daf;
+    margin: 16px;
+    width: 64px;
+    height: 64px;
+    -webkit-transition: background .7s ease-in-out;
+    -o-transition: background .7s ease-in-out;
+    transition: background .7s ease-in-out;
+}
+.naviocon--wrapper:hover {
+    background: #32477Dff;
+}
+.nav-icons {
+    font-size: 1.5em;
+    margin: 0 20px;
+    color: #fff;
+}
+.navphoneDT--wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    border-radius: .3em;
+    background: #32477Daf;
+    margin: 16px;
+    width: auto;
+    height: 64px;
+    -webkit-transition: background .7s ease-in-out;
+    -o-transition: background .7s ease-in-out;
+    transition: background .7s ease-in-out;
+    animation: pnFadeIn .5s ease-in forwards;
+}
+.desktop--phone--visible {
+    margin: 0 20px;
+    font-family: 'Montserrat', arial, sans-serif;
+    font-style: normal;
+    font-size: 1.2em;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+.fakemap_wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    height: 600px;
+    width: 80vw;
+    max-width: 1168px;
+    margin: 5% auto;
+    border:2px solid rgb(70, 96, 161);
+    -webkit-box-shadow: 10px 10px 20px 0px RGBA(70, 96, 161, 1);
+            box-shadow: 10px 10px 20px 0px RGBA(70, 96, 161, 1);
+    border-radius: .8em;
+    overflow: hidden;
+    background-image: url('./assets/large-map.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* between hero and maps */
+.textblock__wrapper {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+}
+
+/* zigzag section */
+.section--split {
+    margin: 5% 0 0 0;
+    padding: 0;
+}
+.shop__wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    text-decoration: none;
+}
+.call__wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    text-decoration: none;
+}
+.two--section__grid {
+    width: 80vw;
+    margin: 5% auto;
+    max-width: 1168px;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-rows: 1fr;
+    grid-template-rows: 1fr;
+    -ms-grid-columns: 1fr 5% 1fr;
+    grid-template-columns: 1fr 1fr;
+    gap: 5%;
+}
+.left--side__wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+}
+.left--z--section__wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+}
+
+/* image tags */
+.logo--img {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    height: 250px;
+    max-width: 250px;
+    -webkit-transform: translateX(-20px);
+        -ms-transform: translateX(-20px);
+            transform: translateX(-20px);
+    background-image: url('./assets/nmls-logo-transparent.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.storefront--img {
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+    -ms-grid-column-align: center;
+        justify-self: center;
+    border-radius: .7em;
+}
+.closeup--keys {
+    max-width: 100%;
+    -ms-flex-item-align: start;
+        -ms-grid-row-align: start;
+        align-self: start;
+    -ms-grid-column-align: center;
+        justify-self: center;
+    border-radius: .7em;
+
+}
+.house--key--img {
+    max-width: 100%;
+    -ms-flex-item-align: start;
+        -ms-grid-row-align: start;
+        align-self: start;
+    -ms-grid-column-align: center;
+        justify-self: center;
+    border-radius: .7em;
+
+}
+.signage--img {
+    max-width: 100%;
+    -ms-flex-item-align: start;
+        -ms-grid-row-align: start;
+        align-self: start;
+    -ms-grid-column-align: center;
+        justify-self: center;
+    border-radius: .7em;
+
+}
+.footer__wrapper {
+    margin-top: 10%;
+    padding: 3%;
+    background: #000000;
+}
+.footer__text {
+    color: #969696!important;
+    font-size: 14px!important;
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background: #121212;
+    }
+    h1 {
+        color: #b3b3b3;
+    }
+    h2 {
+        color: #b3b3b3;
+    }
+    p {
+        color: #b3b3b3;
+    }
+    li {
+        color: #b3b3b3;
+    }
+    .hours-table td {
+        color: #b3b3b3;
+    }
+    .ul--services > li {
+        color: #b3b3b3;
+    }
+    .logo--img {
+        background-image: url('./assets/nmls-logo-transparent-white.png');
+    }
+}
+@media screen and (max-width: 800px) {
+    .logo--img {
+        height: 250px;
+        width: 250px;
+    }
+    .navbar__wrapper {
+        padding: 52px 0 10px 0;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: reverse;
+            -ms-flex-direction: row-reverse;
+                flex-direction: row-reverse;
+        -webkit-box-align: unset;
+            -ms-flex-align: unset;
+                align-items: unset;
+    }
+    .two--section__grid {
+        width: 93%;
+        -ms-grid-rows: auto 3% auto;
+        grid-template-rows: auto auto;
+        -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+        gap: 3%;
+        padding: 3%;
+    }
+    .call__wrapper {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        margin: 0;
+        text-decoration: none;
+    }
+    .house--key--img {
+        -ms-grid-row: 1;
+        -ms-grid-row-span: 1;
+        grid-row: 1 / 2;
+    }
+    .fakemap_wrapper {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        width: 80vw;
+        height: 80vw;
+        margin: 0 auto;
+        border:2px solid #4660a1;
+        border-radius: 5px;
+        background-image: url('./assets/small-map.png');
+    }
+    
+}
+@media screen and (max-width: 450px) {
+    .desktop--phone--visible {
+        font-size: .7em;
+    }
+}
+@keyframes pnFadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}

@@ -1,0 +1,128 @@
+@use './helpers.scss' as *;
+body, html, div, section {
+    margin: 0;
+    padding: 0;
+  }
+  #vans-404-content__wrapper {
+    width: 100%;
+    height: calc(100vh - 52px);
+    margin: 52px 0 0 0;
+    padding: 0;
+    position: relative;
+  }
+
+  #vans-404-video-viewport {
+    background-position: 50%;
+    background-size: cover;
+    // width: 100%;
+    // height: 100%;
+    height: 100dvh;
+    margin: 0 auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    object-fit: cover;
+    object-position: center;
+    max-width: 100%;
+    min-height: 100%;
+    @media (aspect-ratio > 16 / 9) { 
+      width: auto;
+      min-height:100%;
+    }
+    @media (aspect-ratio < 9 / 16) { 
+      height: auto;
+      min-height:100%;
+      width: 100dvw;
+    }
+  }
+  #vans-404-video_column_center {
+  
+    width: 100dvw;
+    height: 100dvh;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+    @media screen and (max-width:768px) {
+      aspect-ratio: 9 / 16;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+  .vans-404-text__wrapper {
+    color: #fff;
+    z-index: 998;
+    background: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    padding: 10px 0;
+    display: flex;
+    position: absolute;
+    transform: translateY(0);
+  }
+  .vans-404-h1 {
+    letter-spacing: .07em;
+    margin: 0;
+    font-family: "franklin-gothic-urw", sans-serif;
+    font-size: 4em;
+    font-style: normal;
+    font-weight: 700;
+  }
+  .vans-404-p {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding: 0;
+    font-family: "franklin-gothic-urw-cond", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+
+  }
+  .vans-404-button {
+    letter-spacing: .1em;
+    color: #fff;
+    background: #c9212c;
+    border: 3px solid #0000;
+    outline: none;
+    width: 150px;
+    height: 50px;
+    margin: 0;
+    padding: 0;
+    font-family: "franklin-gothic-urw", sans-serif;
+    font-size: 1.2em;
+    font-style: normal;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 1s ease-in-out;
+  }
+  .vans-404-button:hover {
+    border: 3px solid #fff;
+  }
+  .font-franklin-gothic-bk {
+    letter-spacing: 0;
+    word-spacing: 2px;
+    font-family: "franklin-gothic-urw-cond", sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1.5;
+  }
+  .vans-404-video {
+    width: 56.25vw;
+    height: 100%;
+    position: relative;
+  }
+  @media (max-width: 760px) {
+    .vans-404-video {
+      visibility: visible;
+      width: 100%;
+      height: 177.778vh;
+      min-height: 100vh;
+      display: block;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+    }
+  }

@@ -1,0 +1,836 @@
+@use './helpers.scss' as *;
+body {
+    -webkit-font-smoothing: antialiased;
+    font-display: swap;
+    font-family: "articulat-cf", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    height: calc(100dvh);
+}
+body, html, div {
+    margin: 0;
+    padding: 0;
+    line-height: 1.5;
+}
+.section-wrapper-404 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    background: #000;
+    height: 100%;
+}
+.doubled-404-wrapper {
+    display: flex;
+    flex-direction: column;
+    animation: float 2s infinite alternate;
+}
+.text-404 {
+    position: relative;
+    color: #d62b72;
+    font-size: 5em;
+    font-family: "lores-12", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+.text-404-double {
+    position: absolute;
+    color: #fff;    
+    transform: translate(2px, 2px);
+    font-size: 4em;
+    font-family: "lores-12", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.btn-flex_wrapper {
+    animation: fade 1s infinite alternate;
+}
+.button-404 {
+    display: inline-block;
+    font-family: "lores-12-plus-narrow", sans-serif;
+    font-weight: 700;
+    white-space: nowrap;
+    position: relative;
+    text-transform: uppercase;
+    text-align: center;
+    cursor: pointer;
+    text-decoration: none;
+    -webkit-touch-callout: none;
+    color: #d62b72;
+    border: none;
+    box-shadow: 
+        4px 4px 0 0 #000,
+        6px 6px 0 0 #d62b72,
+        -4px -4px 0 0 #000,
+        -6px -6px 0 0 #d62b72;
+    // z-index: 9999; // so user cant draw items over cta btn
+    animation: button404Reverse .7s ease-in-out forwards;
+}
+.button-404:hover {
+    animation: button404 .7s ease-in-out forwards;
+}
+@keyframes button404 {
+    0% {
+        box-shadow:
+            4px 4px 0 0 #000, 
+            6px 6px 0 0 #d62b72,
+            -4px -4px 0 0 #000,
+            -6px -6px 0 0 #d62b72;
+    }
+    60% {
+        box-shadow:
+            0px 0px 0 0 #000, 
+            2px 2px 0 0 white,
+            0px 0px 0 0 #000,
+            -2px -2px 0 0 white;
+    }
+    100% {
+        box-shadow:
+            0 2px 0 0 white, 
+            2px 0 0 0 white,
+            0px -2px 0 0 white,
+            -2px 0px 0 0 white;
+            color: #fff;
+    }
+}
+@keyframes button404Reverse {
+    0% {
+        box-shadow:
+            0 2px 0 0 white, 
+            2px 0 0 0 white,
+            0px -2px 0 0 white,
+            -2px 0px 0 0 white;
+            color: #fff;
+            
+    }
+    60% {
+        box-shadow:
+            0px 0px 0 0 #000, 
+            2px 2px 0 0 white,
+            0px 0px 0 0 #000,
+            -2px -2px 0 0 white;
+    }
+    100% {
+        box-shadow:
+            4px 4px 0 0 #000, 
+            6px 6px 0 0 #d62b72,
+            -4px -4px 0 0 #000,
+            -6px -6px 0 0 #d62b72;
+    }
+}
+
+// continue
+.doubled-continue-wrapper {
+    display: flex;
+    margin-right: 100px;
+    margin-left: auto;
+    flex-direction: row;
+    animation: fade 1s infinite alternate;
+}
+.text-continue {
+    position: relative;
+    color: #028cb0;
+    font-size: 2em;
+    font-family: "lores-12", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+.text-continue-double {
+    position: absolute;
+    color: #fff;
+    transform: translate(2px, 2px);
+    font-size: 2em;
+    font-family: "lores-12", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+// coin
+// .coin-space {
+//     position: relative;
+//     display: flex;
+//     flex-direction: column;
+//     width: 68px;
+//     height: 68px;
+// }
+#coinBox{
+    position: relative;
+    // display: table;
+    display: block;
+    margin-top: -20px;
+    width: 40px;
+    transform: perspective(100px) translateZ(-500px);
+    transition: margin-top 2s ease-in-out;
+}
+
+.coinBoxFrame1{
+    background: rgba(0, 0, 0, 0);
+    height: 20px;
+    width: 20px;
+    box-shadow: 
+/*1st line*/
+    40px 0    0 #FFF000,
+    60px 0    0 #FFF000,
+    80px 0    0 #FFF000,
+    100px 0    0 #FFF000,
+    120px 0    0 #FFF000,
+    140px 0    0 #FFF000,
+/*2nd line*/
+    20px 20px 0 #FFF000,
+    40px 20px 0 #FFD800,
+    60px 20px 0 #FFD800,
+    80px 20px 0 #FFD800,
+    100px 20px 0 #FFD800,
+    120px 20px 0 #FFD800,
+    140px 20px 0 #FFD800,
+    160px 20px 0 #FFD800,
+/*3rd line*/
+    0    40px 0 #FFF000,
+    20px 40px 0 #FFD800,
+    40px 40px 0 #FFD800,
+    60px 40px 0 #FFF,
+    80px 40px 0 #FFAE00,
+    100px 40px 0 #FFAE00,
+    120px 40px 0 #FFAE00,
+    140px 40px 0 #FFD800,
+    160px 40px 0 #FFD800,
+    180px 40px 0 #FFD800,
+/*4rd line*/
+    0    60px 0 #FFD800,
+    20px 60px 0 #FFD800,
+    40px 60px 0 #FFF,
+    60px 60px 0 #FFF,
+    80px 60px 0 #FFF,
+    100px 60px 0 #FFD800,
+    120px 60px 0 #FFD800,
+    140px 60px 0 #FFF000,
+    160px 60px 0 #FFD800,
+    180px 60px 0 #FFD800,
+/*5th line*/
+    0    80px 0 #FFD800,
+    20px 80px 0 #FFD800,
+    40px 80px 0 #FFAE00,
+    60px 80px 0 #FFF,
+    80px 80px 0 #FFD800,
+    100px 80px 0 #FFD800,
+    120px 80px 0 #FFD800,
+    140px 80px 0 #FFF000,
+    160px 80px 0 #FFD800,
+    180px 80px 0 #FFD800,
+/*6th line*/
+    0    100px 0 #FFD800,
+    20px 100px 0 #FFD800,
+    40px 100px 0 #FFAE00,
+    60px 100px 0 #FFD800,
+    80px 100px 0 #FFD800,
+    100px 100px 0 #FFD800,
+    120px 100px 0 #FFD800,
+    140px 100px 0 #FFF000,
+    160px 100px 0 #FFD800,
+    180px 100px 0 #FFD800,
+/*7th line*/
+    0    120px 0 #FFD800,
+    20px 120px 0 #FFD800,
+    40px 120px 0 #FFAE00,
+    60px 120px 0 #FFD800,
+    80px 120px 0 #FFD800,
+    100px 120px 0 #FFD800,
+    120px 120px 0 #FFD800,
+    140px 120px 0 #FFF000,
+    160px 120px 0 #FFD800,
+    180px 120px 0 #FFD800,
+/*8th line*/
+    0    140px 0 #FFD800,
+    20px 140px 0 #FFD800,
+    40px 140px 0 #FFD800,
+    60px 140px 0 #FFF000,
+    80px 140px 0 #FFF000,
+    100px 140px 0 #FFF000,
+    120px 140px 0 #FFF000,
+    140px 140px 0 #FFD800,
+    160px 140px 0 #FFD800,
+    180px 140px 0 #FFAE00,
+/*9th line*/
+
+    20px 160px 0 #FFD800,
+    40px 160px 0 #FFD800,
+    60px 160px 0 #FFD800,
+    80px 160px 0 #FFD800,
+    100px 160px 0 #FFD800,
+    120px 160px 0 #FFD800,
+    140px 160px 0 #FFD800,
+    160px 160px 0 #FFAE00,
+/*10th line*/
+
+    40px 180px 0 #FFAE00,
+    60px 180px 0 #FFAE00,
+    80px 180px 0 #FFAE00,
+    100px 180px 0 #FFAE00,
+    120px 180px 0 #FFAE00,
+    140px 180px 0 #FFAE00;
+}
+
+.coinBoxFrame2{
+    background: rgba(0, 0, 0, 0);
+    height: 20px;
+    width: 20px;
+    box-shadow: 
+/*1st line*/
+    50px 0    0 #FFF000,
+    70px 0    0 #FFF000,
+    90px 0    0 #FFF000,
+    110px 0    0 #FFF000,
+    130px 0    0 #FFF000,
+/*2nd line*/
+    30px 20px 0 #FFF000,
+    50px 20px 0 #FFD800,
+    70px 20px 0 #FFD800,
+    90px 20px 0 #FFD800,
+    110px 20px 0 #FFD800,
+    130px 20px 0 #FFD800,
+    150px 20px 0 #FFD800,
+/*3rd line*/
+    10px 40px 0 #FFF000,
+    20px 40px 0 #FFD800,
+    40px 40px 0 #FFD800,
+    60px 40px 0 #FFD800,
+    80px 40px 0 #FFAE00,
+    90px 40px 0 #FFAE00,
+    110px 40px 0 #FFAE00,
+    130px 40px 0 #FFD800,
+    150px 40px 0 #FFD800,
+    170px 40px 0 #FFD800,
+/*4rd line*/
+    10px    60px 0 #FFD800,
+    20px 60px 0 #FFD800,
+    40px 60px 0 #FFD800,
+    60px 60px 0 #FFF,
+    80px 60px 0 #FFD800,
+    90px 60px 0 #FFD800,
+    110px 60px 0 #FFD800,
+    130px 60px 0 #FFF000,
+    150px 60px 0 #FFD800,
+    170px 60px 0 #FFD800,
+/*5th line*/
+    10px    80px 0 #FFD800,
+    20px 80px 0 #FFD800,
+    40px 80px 0 #FFD800,
+    60px 80px 0 #FFAE00,
+    80px 80px 0 #FFD800,
+    90px 80px 0 #FFD800,
+    110px 80px 0 #FFD800,
+    130px 80px 0 #FFF000,
+    150px 80px 0 #FFD800,
+    170px 80px 0 #FFD800,
+/*6th line*/
+    10px    100px 0 #FFD800,
+    20px 100px 0 #FFD800,
+    40px 100px 0 #FFD800,
+    60px 100px 0 #FFAE00,
+    80px 100px 0 #FFD800,
+    90px 100px 0 #FFD800,
+    110px 100px 0 #FFD800,
+    130px 100px 0 #FFF000,
+    150px 100px 0 #FFD800,
+    170px 100px 0 #FFD800,
+/*7th line*/
+    10px    120px 0 #FFD800,
+    20px 120px 0 #FFD800,
+    40px 120px 0 #FFD800,
+    60px 120px 0 #FFAE00,
+    80px 120px 0 #FFD800,
+    90px 120px 0 #FFD800,
+    110px 120px 0 #FFD800,
+    130px 120px 0 #FFF000,
+    150px 120px 0 #FFD800,
+    170px 120px 0 #FFD800,
+/*8th line*/
+    10px 140px 0 #FFD800,
+    30px 140px 0 #FFD800,
+    50px 140px 0 #FFD800,
+    60px 140px 0 #FFD800,
+    80px 140px 0 #FFF000,
+    100px 140px 0 #FFF000,
+    110px 140px 0 #FFF000,
+    130px 140px 0 #FFD800,
+    150px 140px 0 #FFD800,
+    170px 140px 0 #FFAE00,
+/*9th line*/
+    30px 160px 0 #FFD800,
+    50px 160px 0 #FFD800,
+    70px 160px 0 #FFD800,
+    90px 160px 0 #FFD800,
+    110px 160px 0 #FFD800,
+    130px 160px 0 #FFD800,
+    150px 160px 0 #FFAE00,
+/*10th line*/
+    50px 180px 0 #FFAE00,
+    60px 180px 0 #FFAE00,
+    80px 180px 0 #FFAE00,
+    100px 180px 0 #FFAE00,
+    120px 180px 0 #FFAE00,
+    130px 180px 0 #FFAE00;
+}
+
+.coinBoxFrame3{
+    background: rgba(0, 0, 0, 0);
+    height: 20px;
+    width: 20px;
+    box-shadow: 
+/*1st line*/
+    60px 0    0 #FFF000,
+    80px 0    0 #FFF000,
+    100px 0    0 #FFF000,
+    120px 0    0 #FFF000,
+/*2nd line*/
+    40px 20px 0 #FFF000,
+    60px 20px 0 #FFD800,
+    80px 20px 0 #FFD800,
+    100px 20px 0 #FFD800,
+    120px 20px 0 #FFD800,
+    140px 20px 0 #FFD800,
+/*3rd line*/
+    20px 40px 0 #FFF000,
+    40px 40px 0 #FFD800,
+    60px 40px 0 #FFD800,
+    80px 40px 0 #FFD800,
+    100px 40px 0 #FFAE00,
+    120px 40px 0 #FFD800,
+    140px 40px 0 #FFD800,
+    160px 40px 0 #FFD800,
+/*4rd line*/
+    20px 60px 0 #FFD800,
+    40px 60px 0 #FFD800,
+    60px 60px 0 #FFD800,
+    80px 60px 0 #FFAE00,
+    100px 60px 0 #FFD800,
+    120px 60px 0 #FFF000,
+    140px 60px 0 #FFD800,
+    160px 60px 0 #FFD800,
+/*5th line*/
+    20px 80px 0 #FFD800,
+    40px 80px 0 #FFD800,
+    60px 80px 0 #FFD800,
+    80px 80px 0 #FFAE00,
+    100px 80px 0 #FFD800,
+    120px 80px 0 #FFF000,
+    140px 80px 0 #FFD800,
+    160px 80px 0 #FFD800,
+/*6th line*/
+    20px 100px 0 #FFD800,
+    40px 100px 0 #FFD800,
+    60px 100px 0 #FFD800,
+    80px 100px 0 #FFAE00,
+    100px 100px 0 #FFD800,
+    120px 100px 0 #FFF000,
+    140px 100px 0 #FFD800,
+    160px 100px 0 #FFD800,
+/*7th line*/
+    20px 120px 0 #FFD800,
+    40px 120px 0 #FFD800,
+    60px 120px 0 #FFD800,
+    80px 120px 0 #FFAE00,
+    100px 120px 0 #FFD800,
+    120px 120px 0 #FFF000,
+    140px 120px 0 #FFD800,
+    160px 120px 0 #FFD800,
+/*8th line*/
+    20px 140px 0 #FFD800,
+    40px 140px 0 #FFD800,
+    60px 140px 0 #FFD800,
+    80px 140px 0 #FFD800,
+    100px 140px 0 #FFF000,
+    120px 140px 0 #FFD800,
+    140px 140px 0 #FFD800,
+    160px 140px 0 #FFAE00,
+/*9th line*/
+    40px 160px 0 #FFD800,
+    60px 160px 0 #FFD800,
+    80px 160px 0 #FFD800,
+    100px 160px 0 #FFD800,
+    120px 160px 0 #FFD800,
+    140px 160px 0 #FFAE00,
+/*10th line*/
+    60px 180px 0 #FFAE00,
+    80px 180px 0 #FFAE00,
+    100px 180px 0 #FFAE00,
+    120px 180px 0 #FFAE00;
+}
+
+.coinBoxFrame4{
+    background: rgba(0, 0, 0, 0);
+    height: 20px;
+    width: 20px;
+    box-shadow: 
+/*1st line*/
+    70px 0    0 #FFF000,
+    90px 0    0 #FFF000,
+    110px 0    0 #FFF000,
+/*2nd line*/
+    50px 20px 0 #FFF000,
+    70px 20px 0 #FFD800,
+    90px 20px 0 #FFD800,
+    110px 20px 0 #FFD800,
+    130px 20px 0 #FFD800,
+/*3rd line*/
+    50px 40px 0 #FFD800,
+    70px 40px 0 #FFD800,
+    90px 40px 0 #FFD800,
+    110px 40px 0 #FFAE00,
+    130px 40px 0 #FFD800,
+/*4rd line*/
+    50px 60px 0 #FFD800,
+    70px 60px 0 #FFD800,
+    90px 60px 0 #FFD800,
+    110px 60px 0 #FFAE00,
+    130px 60px 0 #FFD800,
+/*5th line*/
+    50px 80px 0 #FFD800,
+    70px 80px 0 #FFD800,
+    90px 80px 0 #FFD800,
+    110px 80px 0 #FFAE00,
+    130px 80px 0 #FFD800,
+/*6th line*/
+    50px 100px 0 #FFD800,
+    70px 100px 0 #FFD800,
+    90px 100px 0 #FFD800,
+    110px 100px 0 #FFAE00,
+    130px 100px 0 #FFD800,
+/*7th line*/
+    50px 120px 0 #FFD800,
+    70px 120px 0 #FFD800,
+    90px 120px 0 #FFD800,
+    110px 120px 0 #FFAE00,
+    130px 120px 0 #FFD800,
+/*8th line*/
+    50px 140px 0 #FFD800,
+    70px 140px 0 #FFD800,
+    90px 140px 0 #FFD800,
+    110px 140px 0 #FFAE00,
+    130px 140px 0 #FFD800,
+/*9th line*/
+    50px 160px 0 #FFD800,
+    70px 160px 0 #FFD800,
+    90px 160px 0 #FFD800,
+    110px 160px 0 #FFD800,
+    130px 160px 0 #FFD800,
+/*10th line*/
+    70px 180px 0 #FFAE00,
+    90px 180px 0 #FFAE00,
+    110px 180px 0 #FFAE00;
+}
+
+.coinBoxFrame5{
+    background: rgba(0, 0, 0, 0);
+    height: 20px;
+    width: 20px;
+    box-shadow: 
+/*1st line*/
+    70px 0    0 #FFF000,
+    90px 0    0 #FFF000,
+    110px 0    0 #FFF000,
+/*2nd line*/
+    70px 20px 0 #FFD800,
+    90px 20px 0 #FFD800,
+    110px 20px 0 #FFD800,
+/*3rd line*/
+    70px 40px 0 #FFD800,
+    90px 40px 0 #FFD800,
+    110px 40px 0 #FFD800,
+/*4rd line*/
+    70px 60px 0 #FFD800,
+    90px 60px 0 #FFD800,
+    110px 60px 0 #FFD800,
+/*5th line*/
+    70px 80px 0 #FFD800,
+    90px 80px 0 #FFD800,
+    110px 80px 0 #FFD800,
+/*6th line*/
+    70px 100px 0 #FFD800,
+    90px 100px 0 #FFD800,
+    110px 100px 0 #FFD800,
+/*7th line*/
+    70px 120px 0 #FFD800,
+    90px 120px 0 #FFD800,
+    110px 120px 0 #FFD800,
+/*8th line*/
+    70px 140px 0 #FFD800,
+    90px 140px 0 #FFD800,
+    110px 140px 0 #FFD800,
+/*9th line*/
+    70px 160px 0 #FFD800,
+    90px 160px 0 #FFD800,
+    110px 160px 0 #FFD800,
+/*10th line*/
+    70px 180px 0 #FFAE00,
+    90px 180px 0 #FFAE00,
+    110px 180px 0 #FFAE00;
+}
+
+.coinBoxFrame6{
+    background: rgba(0, 0, 0, 0);
+    height: 20px;
+    width: 20px;
+    box-shadow: 
+/*1st line*/
+    70px 0    0 #FFF000,
+    90px 0    0 #FFF000,
+    110px 0    0 #FFF000,
+/*2nd line*/
+    50px 20px 0 #FFF000,
+    70px 20px 0 #FFD800,
+    90px 20px 0 #FFD800,
+    110px 20px 0 #FFD800,
+    130px 20px 0 #FFD800,
+/*3rd line*/
+    50px 40px 0 #FFD800,
+    70px 40px 0 #FFAE00,
+    90px 40px 0 #FFD800,
+    110px 40px 0 #FFD800,
+    130px 40px 0 #FFD800,
+/*4rd line*/
+    50px 60px 0 #FFD800,
+    70px 60px 0 #FFAE00,
+    90px 60px 0 #FFD800,
+    110px 60px 0 #FFD800,
+    130px 60px 0 #FFD800,
+/*5th line*/
+    50px 80px 0 #FFD800,
+    70px 80px 0 #FFAE00,
+    90px 80px 0 #FFD800,
+    110px 80px 0 #FFD800,
+    130px 80px 0 #FFD800,
+/*6th line*/
+    50px 100px 0 #FFD800,
+    70px 100px 0 #FFAE00,
+    90px 100px 0 #FFD800,
+    110px 100px 0 #FFD800,
+    130px 100px 0 #FFD800,
+/*7th line*/
+    50px 120px 0 #FFD800,
+    70px 120px 0 #FFAE00,
+    90px 120px 0 #FFD800,
+    110px 120px 0 #FFD800,
+    130px 120px 0 #FFD800,
+/*8th line*/
+    50px 140px 0 #FFD800,
+    70px 140px 0 #FFAE00,
+    90px 140px 0 #FFD800,
+    110px 140px 0 #FFD800,
+    130px 140px 0 #FFD800,
+/*9th line*/
+    50px 160px 0 #FFD800,
+    70px 160px 0 #FFD800,
+    90px 160px 0 #FFD800,
+    110px 160px 0 #FFD800,
+    130px 160px 0 #FFD800,
+/*10th line*/
+    70px 180px 0 #FFAE00,
+    90px 180px 0 #FFAE00,
+    110px 180px 0 #FFAE00;
+}
+
+.coinBoxFrame7{
+    background: rgba(0, 0, 0, 0);
+    height: 20px;
+    width: 20px;
+    box-shadow: 
+/*1st line*/
+    60px 0    0 #FFF000,
+    80px 0    0 #FFF000,
+    100px 0    0 #FFF000,
+    120px 0    0 #FFF000,
+/*2nd line*/
+    40px 20px 0 #FFF000,
+    60px 20px 0 #FFD800,
+    80px 20px 0 #FFD800,
+    100px 20px 0 #FFD800,
+    120px 20px 0 #FFD800,
+    140px 20px 0 #FFD800,
+/*3rd line*/
+    20px 40px 0 #FFF000,
+    40px 40px 0 #FFD800,
+    60px 40px 0 #FFD800,
+    80px 40px 0 #FFAE00,
+    100px 40px 0 #FFD800,
+    120px 40px 0 #FFD800,
+    140px 40px 0 #FFD800,
+    160px 40px 0 #FFD800,
+/*4rd line*/
+    20px 60px 0 #FFD800,
+    40px 60px 0 #FFD800,
+    60px 60px 0 #FFAE00,
+    80px 60px 0 #FFD800,
+    100px 60px 0 #FFF000,
+    120px 60px 0 #FFD800,
+    140px 60px 0 #FFD800,
+    160px 60px 0 #FFD800,
+/*5th line*/
+    20px 80px 0 #FFD800,
+    40px 80px 0 #FFD800,
+    60px 80px 0 #FFAE00,
+    80px 80px 0 #FFD800,
+    100px 80px 0 #FFF000,
+    120px 80px 0 #FFD800,
+    140px 80px 0 #FFD800,
+    160px 80px 0 #FFD800,
+/*6th line*/
+    20px 100px 0 #FFD800,
+    40px 100px 0 #FFD800,
+    60px 100px 0 #FFAE00,
+    80px 100px 0 #FFD800,
+    100px 100px 0 #FFF000,
+    120px 100px 0 #FFD800,
+    140px 100px 0 #FFD800,
+    160px 100px 0 #FFD800,
+/*7th line*/
+    20px 120px 0 #FFD800,
+    40px 120px 0 #FFD800,
+    60px 120px 0 #FFAE00,
+    80px 120px 0 #FFD800,
+    100px 120px 0 #FFF000,
+    120px 120px 0 #FFD800,
+    140px 120px 0 #FFD800,
+    160px 120px 0 #FFD800,
+/*8th line*/
+    20px 140px 0 #FFD800,
+    40px 140px 0 #FFD800,
+    60px 140px 0 #FFD800,
+    80px 140px 0 #FFF000,
+    100px 140px 0 #FFD800,
+    120px 140px 0 #FFD800,
+    140px 140px 0 #FFD800,
+    160px 140px 0 #FFAE00,
+/*9th line*/
+    40px 160px 0 #FFD800,
+    60px 160px 0 #FFD800,
+    80px 160px 0 #FFD800,
+    100px 160px 0 #FFD800,
+    120px 160px 0 #FFD800,
+    140px 160px 0 #FFAE00,
+/*10th line*/
+    60px 180px 0 #FFAE00,
+    80px 180px 0 #FFAE00,
+    100px 180px 0 #FFAE00,
+    120px 180px 0 #FFAE00;
+}
+
+.coinBoxFrame8{
+    background: rgba(0, 0, 0, 0);
+    height: 20px;
+    width: 20px;
+    box-shadow: 
+/*1st line*/
+    50px 0    0 #FFF000,
+    70px 0    0 #FFF000,
+    90px 0    0 #FFF000,
+    110px 0    0 #FFF000,
+    130px 0    0 #FFF000,
+/*2nd line*/
+    30px 20px 0 #FFF000,
+    50px 20px 0 #FFD800,
+    70px 20px 0 #FFD800,
+    90px 20px 0 #FFD800,
+    110px 20px 0 #FFD800,
+    130px 20px 0 #FFD800,
+    150px 20px 0 #FFD800,
+/*3rd line*/
+    10px 40px 0 #FFF000,
+    30px 40px 0 #FFD800,
+    50px 40px 0 #FFD800,
+    70px 40px 0 #FFAE00,
+    80px 40px 0 #FFAE00,
+    90px 40px 0 #FFAE00,
+    100px 40px 0 #FFAE00,
+    110px 40px 0 #FFD800,
+    130px 40px 0 #FFD800,
+    150px 40px 0 #FFD800,
+    170px 40px 0 #FFD800,
+/*4rd line*/
+    10px    60px 0 #FFD800,
+    30px 60px 0 #FFD800,
+    50px 60px 0 #FFF,
+    70px 60px 0 #FFD800,
+    90px 60px 0 #FFD800,
+    100px 60px 0 #FFD800,
+    120px 60px 0 #FFF000,
+    140px 60px 0 #FFD800,
+    160px 60px 0 #FFD800,
+    170px 60px 0 #FFD800,
+/*5th line*/
+    10px    80px 0 #FFD800,
+    30px 80px 0 #FFD800,
+    50px 80px 0 #FFAE00,
+    70px 80px 0 #FFD800,
+    90px 80px 0 #FFD800,
+    100px 80px 0 #FFD800,
+    120px 80px 0 #FFF000,
+    140px 80px 0 #FFD800,
+    160px 80px 0 #FFD800,
+    170px 80px 0 #FFD800,
+/*6th line*/
+    10px    100px 0 #FFD800,
+    30px 100px 0 #FFD800,
+    50px 100px 0 #FFAE00,
+    70px 100px 0 #FFD800,
+    90px 100px 0 #FFD800,
+    100px 100px 0 #FFD800,
+    120px 100px 0 #FFF000,
+    140px 100px 0 #FFD800,
+    160px 100px 0 #FFD800,
+    170px 100px 0 #FFD800,
+/*7th line*/
+    10px    120px 0 #FFD800,
+    30px 120px 0 #FFD800,
+    50px 120px 0 #FFAE00,
+    70px 120px 0 #FFD800,
+    90px 120px 0 #FFD800,
+    100px 120px 0 #FFD800,
+    120px 120px 0 #FFF000,
+    140px 120px 0 #FFD800,
+    160px 120px 0 #FFD800,
+    170px 120px 0 #FFD800,
+/*8th line*/
+    10px 140px 0 #FFD800,
+    30px 140px 0 #FFD800,
+    50px 140px 0 #FFD800,
+    70px 140px 0 #FFF000,
+    90px 140px 0 #FFF000,
+    100px 140px 0 #FFF000,
+    120px 140px 0 #FFD800,
+    140px 140px 0 #FFD800,
+    150px 140px 0 #FFD800,
+    170px 140px 0 #FFAE00,
+/*9th line*/
+    30px 160px 0 #FFD800,
+    50px 160px 0 #FFD800,
+    70px 160px 0 #FFD800,
+    90px 160px 0 #FFD800,
+    110px 160px 0 #FFD800,
+    130px 160px 0 #FFD800,
+    150px 160px 0 #FFAE00,
+/*10th line*/
+    50px 180px 0 #FFAE00,
+    60px 180px 0 #FFAE00,
+    80px 180px 0 #FFAE00,
+    100px 180px 0 #FFAE00,
+    120px 180px 0 #FFAE00,
+    130px 180px 0 #FFAE00;
+}
+// coin
+@keyframes fade {
+    0% {
+      opacity: .6;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+@keyframes float {
+    0% {
+      transform: translate(0, 0);
+    }
+    100% {
+      transform: translate(0, -20px);
+    }
+  }

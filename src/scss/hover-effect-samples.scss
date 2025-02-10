@@ -1,0 +1,419 @@
+$csBoxShadow: 0px 0px 20px;
+$csCardBackground: rgba(255, 255, 255, 0.4);
+
+$csColorOne: #81094d;
+$csColorOneDesaturated: #72184b;
+$csColorOneLight: #b52678;
+
+$csColorTwo: #790981;
+$csColorTwoDesaturated: #6c1872;
+$csColorTwoLight: #ac26b5;
+
+$csColorThree: #3d0981;
+$csColorThreeDesaturated: #3f1872;
+$csColorThreeLight: #6426b5;
+
+$csColorFour:  #081081;
+$csColorFourDesaturated: #171d72;
+$csColorFourLight:  #252fb6;
+
+// splide
+.splide--area__wrapper {
+  // position: absolute;
+  // top: 0;
+  // left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px dotted white;
+}
+// .splide {
+  // border: 2px solid orange;
+  // visibility: visible;
+// }
+.cs--splide__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  transition: all 0.75s ease-in-out;
+  // height: 100%;
+  margin-top: 99px;
+  @media screen and (max-width: 640px) {
+    flex-direction: column;
+  }
+}
+.splide__arrow {
+  color: green;
+  background:transparent;
+}
+.splide__arrow--prev {
+  font-size: 3em;
+  left: 2vw;
+}
+.splide__arrow--next{
+  font-size: 3em;
+  right: 2vw;
+}
+.splide__pagination {
+  bottom:-1.5em;
+}
+.splide__pagination__page.is-active {
+  background-color: greenyellow;
+  transition: all 0.5s ease-in-out;
+}
+.splide__pagination__page {
+  background-color: green;
+}
+// splide end
+
+// code
+.cs--code--card__wrapper {
+  display: flex;
+  position: relative;
+  border-radius: 2em;
+  justify-content: center;
+  align-items: center;
+  justify-content: center;
+  background: black;
+  border: 1px solid green;
+  overflow: hidden;
+  width: 400px;
+  height: 400px;
+  @media screen and (max-width:1024px) and (min-width:641px) {
+      margin: 2vw 0 2vw 0;  
+  }
+  @media screen and (max-width:640px) {
+      margin: 2vw 1vw 2vw 1vw;
+      width: 300px;
+      height: 300px;
+  }
+}
+.cs--codeblock--icon {
+  position: absolute;
+  color: green;
+  font-size: 2em;
+  padding: 20px;
+  top: 0;
+  left: 0;
+}
+.cs--codeblock--text {
+  color: green;
+  font-size: 1em;
+  line-height: 2em;
+  padding: 5em;
+}
+// code end
+
+// card text classes
+.cs--about--card-titles {
+  color: #fff;
+  z-index: 4;
+  font-family: 'Figtree', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.5rem;
+  // color:#001d3d;
+  -webkit-font-smoothing: subpixel-antialiased;
+  font-display: swap;
+}
+.cs--about--card--descriptions {
+  color: #fff;
+  z-index: 4;
+  font-family: 'Figtree', sans-serif;
+  font-size: 1em;
+  font-weight: 500;
+  line-height: 1.25rem;
+  padding: 1.5em;
+  text-align: center;
+  // color: #60656C;
+  -webkit-font-smoothing: subpixel-antialiased;
+  font-display: swap;
+}
+// card text classes end
+
+// universal
+.cs--icons {
+  font-size: 2em;
+  color: #fff;
+}
+.cs--card--icon--wrapper {
+  display: flex;
+  position: relative;
+  margin: 1.5em;
+}
+// universal end
+
+// circle card
+.cs--circle--card__wrapper {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  justify-content: center;
+  border-radius: 2em;
+  background: $csCardBackground;
+  border: 2px solid #ffffff40;
+  overflow: hidden;
+  width: 300px;
+  height: 300px;
+  transition: all 0.7s ease-in-out;
+  @media screen and (max-width:1024px) and (min-width:641px) {
+      margin: 2vw 0 2vw 0;  
+  }
+  @media screen and (max-width:640px) {
+      margin: 2vw 1vw 2vw 1vw;
+  }
+}
+.cs--circle--card__wrapper:hover {
+  transition: all 0.7s ease-in-out; 
+  transform: translateY(-2);
+  border: 2px solid #003566ff;
+  box-shadow: $csBoxShadow $csColorOne;
+  cursor: pointer;
+  overflow: hidden;
+}
+.cs--circle--card--icon--background {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(1.35rem, calc(1.28rem + 0.37vw), 1.56rem);
+  background-color: $csColorOneLight;
+  border-radius: 50%;
+}
+.cs--circle--hover--effect {
+  position: absolute;
+  background-color: $csColorOneDesaturated;
+  border-radius: 50%;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  opacity: .8;
+  transition: all .7s ease-in-out;
+}
+.cs--circle--card__wrapper:hover .cs--circle--hover--effect {
+  transform: scale(12);
+  opacity: .8;
+}
+// circle card end
+
+// double circle card
+.cs--double--circle--card__wrapper {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  justify-content: center;
+  border-radius: 2em;
+  background: $csCardBackground;
+  border: 2px solid #ffffff40;
+  overflow: hidden;
+  width: 400px;
+  height: 400px;
+  transition: all 0.7s ease-in-out;
+  @media screen and (max-width:1024px) and (min-width:641px) {
+      margin: 2vw 0 2vw 0;  
+  }
+  @media screen and (max-width:640px) {
+      margin: 2vw 1vw 2vw 1vw;
+  }
+}
+.cs--double--circle--card__wrapper:hover {
+  transition: all 0.7s ease-in-out; 
+  transform: translateY(-2);
+  border: 2px solid #003566ff;
+  box-shadow: $csBoxShadow;
+  cursor: pointer;
+  overflow: hidden;
+}
+.cs--double--circle--card--icon--background {
+  padding: clamp(1.35rem, calc(1.28rem + 0.37vw), 1.56rem);
+  background-color: #A96E82;
+  border-radius: 50%;
+}
+.cs--first--circle--hover--effect {
+  position: absolute;
+  background-color: #751637;
+  border-radius: 50%;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  opacity: .6;
+  transition: all .7s ease-in-out;
+}
+.cs--second--circle--hover--effect {
+  position: absolute;
+  background-color: #90435D;
+  border-radius: 50%;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  opacity: .6;
+  transition: all .9s ease-in-out;
+}
+.cs--double--circle--card__wrapper:hover 
+.cs--first--circle--hover--effect, 
+.cs--double--circle--card__wrapper:hover 
+.cs--second--circle--hover--effect {
+  transform: scale(12);
+  opacity: .8;
+}
+// double circle card end
+
+// square card
+.cs--square--card__wrapper {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  justify-content: center;
+  border-radius: 2em;
+  padding: 20px;
+  background: $csCardBackground;
+  border: 2px solid #ffffff40;
+  overflow: hidden;
+  width: 400px;
+  height: 400px;
+  transition: all 0.7s ease-in-out;
+  @media screen and (max-width:1024px) and (min-width:641px) {
+      margin: 2vw 0 2vw 0;  
+  }
+  @media screen and (max-width:640px) {
+      margin: 2vw 1vw 2vw 1vw;
+  }
+}
+.cs--square--card__wrapper:hover {
+  transition: all 0.7s ease-in-out; 
+  transform: translateY(-2);
+  border: 2px solid #003566ff;
+  box-shadow: $csBoxShadow;
+  cursor: pointer;
+  overflow: hidden;
+}
+.cs--square--card--icon--background {
+  padding: clamp(1.35rem, calc(1.28rem + 0.37vw), 1.56rem);
+  background-color: #BB8FD5;
+  border-radius: 1em;
+}
+.cs--square--hover--effect {
+  position: absolute;
+  background-color: #541675;
+  border-radius: 1em;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  opacity: .6;
+  transition: all .7s ease-in-out;
+}
+.cs--square--card__wrapper:hover .cs--square--hover--effect {
+  transform: scale(12);
+  opacity: .8;
+  border-radius: 2em;
+}
+// square card end
+
+// icon only card
+.cs--icon--only--card__wrapper {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  justify-content: center;
+  border-radius: 2em;
+  padding: 20px;
+  background: $csCardBackground;
+  border: 2px solid #ffffff40;
+  overflow: hidden;
+  width: 400px;
+  height: 400px;
+  transition: all 0.7s ease-in-out;
+  @media screen and (max-width:1024px) and (min-width:641px) {
+      margin: 2vw 0 2vw 0;  
+  }
+  @media screen and (max-width:640px) {
+      margin: 2vw 1vw 2vw 1vw;
+  }
+}
+.cs--icon--only--card__wrapper:hover {
+  transition: all 0.7s ease-in-out; 
+  transform: translateY(-2);
+  border: 2px solid #003566ff;
+  box-shadow: $csBoxShadow;
+  cursor: pointer;
+  overflow: hidden;
+}
+.cs--icon--only--card--icon--background {
+  padding: clamp(1.35rem, calc(1.28rem + 0.37vw), 1.56rem);
+  background-color: #BB8FD5;
+  // border-radius: 1em;
+  border-radius: 50%;
+}
+.cs--icon--only--hover--effect {
+  position: absolute;
+  background-color: #541675;
+  // border-radius: 1em;
+  border-radius: 50%;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  opacity: .6;
+  transition: all .7s ease-in-out;
+}
+.cs--icon--only--card__wrapper:hover .cs--icon--only--hover--effect {
+  transform: scale(12);
+  opacity: .8;
+  // border-radius: 2em;
+}
+.cs--icon--only--card__wrapper:hover .cs--icon--only--card--icon--wrapper {
+  transform: translateY(0);
+}
+.cs--icon--only--card__wrapper:hover .cs--text--fade--in {
+  opacity: 1;
+}
+.cs--icon--only--card--icon--wrapper {
+    display: flex;
+    position: relative;
+    transform: translateY(85%);
+    transition: all .7s ease-in-out;
+}
+.cs--text--fade--in {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+// icon only card end
+
+// copyright
+.he--cc--copyright__wrapper {
+  position: absolute;
+  width: 99%;
+  bottom: 0;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+.he--cc--copyrighttext {
+  text-align: center;
+  font-family: "articulat-cf", sans-serif;
+  color:#0caa3b;
+}
+.he--cc--copyrightlink {
+  font-family: "articulat-cf", sans-serif;
+  color: #9affb8;
+  font-weight: 600;
+  text-decoration: none;
+  pointer-events: all;
+  position: relative;
+  display: inline-block;
+  transition: all 0.777s;
+}
+.he--cc--copyrightlink:visited {
+  color: #9affb8;
+}
+
+.he--cc--copyrightlink:hover , .cc--cc--copyrightlink:active    {
+  color: #53D57A;
+}
+// end copyright

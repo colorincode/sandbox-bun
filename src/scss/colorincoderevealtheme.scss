@@ -1,0 +1,394 @@
+@use './helpers.scss' as *;
+@use 'sass:math';
+@use "sass:color";
+
+// Default mixins and settings -----------------
+@forward "./reveal.scss";
+
+// ---------------------------------------------
+
+// Override theme settings
+$backgroundColor: rgb(22, 22, 22);
+$mainColor: #000;
+$headingColor: #000;
+$invertColor:#fff;
+$mainFontSize: 42px;
+$mainFont: "articulat-cf", sans-serif;
+$headingFont: "rift", sans-serif;
+$headingTextShadow: none;
+$headingLetterSpacing: normal;
+$headingTextTransform: uppercase;
+$headingFontWeight: 600;
+$linkColor: var(--mint-green);
+// $linkColorHover: color.scale( $lightness: 15%);
+// $selectionBackgroundColor: color.adjust( $lightness: 25%);
+$selectionBackgroundColor: rgba(255, 255, 255,85%);
+$heading1Size: 2.5em;
+$heading2Size: 1.6em;
+$heading3Size: 1.3em;
+$heading4Size: 1.0em;
+$controlArrowSpacing:4em;
+$controlArrowSize:2em;
+$overlayElementBgColor: 0, 0, 0;
+$overlayElementFgColor: 240, 240, 240;
+:root {
+// --r-controls-spacing: 10px;
+--r-controls-spacing: 1.3em;
+--slide-width: 100%;
+--slide-height: 100dvh;
+--slide-scale: 1;
+--viewport-width: 100%;
+--viewport-height: 100dvh;
+}
+// // Change text colors against dark slide backgrounds
+// @include dark-bg-text-color(#fff);
+
+// // Dark background styles
+// .has-dark-background {
+//   &, h1, h2, h3, h4, h5, h6 {
+//     color: #fff;
+//   }
+// }
+
+// Global styles
+body {
+  background: $backgroundColor;
+  margin: 0;
+  padding: 0;
+}
+
+.reveal {
+  font-family: $mainFont;
+  font-size: $mainFontSize;
+  font-weight: normal;
+  color: $mainColor;
+  //added
+  min-height: 100dvh;
+}
+
+::selection {
+  color: $invertColor;
+  background: $selectionBackgroundColor;
+  text-shadow: none;
+}
+
+.reveal .slides section,
+.reveal .slides section > section {
+  line-height: 1.3;
+  font-weight: inherit;
+  height: 100%;
+}
+
+// Headers
+.reveal h1 {
+  text-shadow: none;
+  font-family: "rift",sans-serif;
+  font-weight: 600;
+  font-size: clamp(2.5rem, 1vw, 1rem);
+}
+
+// Other elements
+.reveal {
+  strong, b {
+    font-weight: bold;
+  }
+
+  em {
+    font-style: italic;
+  }
+
+  ol, dl, ul {
+    display: inline-block;
+    text-align: left;
+    padding: 0;
+  }
+
+  ol {
+    list-style-type: decimal;
+  }
+
+  ul {
+    list-style-type: disc;
+
+    ul {
+      list-style-type: square;
+
+      ul {
+        list-style-type: circle;
+      }
+    }
+  }
+
+  ul ul,
+  ul ol,
+  ol ol,
+  ol ul {
+    display: block;
+    margin-left: 40px;
+  }
+
+  dt {
+    font-weight: bold;
+  }
+
+  dd {
+    margin-left: 40px;
+  }
+
+  blockquote {
+    display: block;
+    position: relative;
+    width: 70%;
+    margin: 20px auto;
+    padding: 5px;
+    font-style: italic;
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+
+    p:first-child,
+    p:last-child {
+      display: inline-block;
+    }
+  }
+
+  q {
+    font-style: italic;
+  }
+
+  pre {
+    display: block;
+    position: relative;
+    width: 90%;
+    margin: 20px auto;
+    text-align: left;
+    font-size: 0.55em;
+    font-family: monospace;
+    line-height: 1.2em;
+    word-wrap: break-word;
+  }
+
+  code {
+    font-family: monospace;
+    text-transform: none;
+  }
+
+  pre code {
+    display: block;
+    padding: 5px;
+    overflow: auto;
+    max-height: 400px;
+    word-wrap: normal;
+  }
+
+  table {
+    margin: auto;
+    border-collapse: collapse;
+    border-spacing: 0;
+
+    th {
+      font-weight: bold;
+    }
+
+    th, td {
+      text-align: left;
+      padding: 0.2em 0.5em;
+      border-bottom: 1px solid;
+
+      &[align="center"] {
+        text-align: center;
+      }
+
+      &[align="right"] {
+        text-align: right;
+      }
+    }
+
+    tbody tr:last-child {
+      th, td {
+        border-bottom: none;
+      }
+    }
+  }
+
+  sup {
+    vertical-align: super;
+  }
+
+  sub {
+    vertical-align: sub;
+  }
+
+  small {
+    display: inline-block;
+    font-size: 0.6em;
+    line-height: 1.2em;
+    vertical-align: top;
+
+    * {
+      vertical-align: top;
+    }
+  }
+}
+
+// Links
+.reveal a {
+  text-decoration: none;
+}
+
+.reveal .roll span:after {
+  color: #fff;
+  background: #1a53a1;
+}
+
+// Images
+.reveal section img.plain {
+  border: 0;
+  box-shadow: none;
+}
+
+//fixes interpolation issue
+.reveal .controls button {
+ color: var(--mint-green);
+}
+
+// }
+// Progress bar
+.reveal .progress {
+  background: rgba(0, 0, 0, 0.2);
+  color: var(--mint-green);
+
+  span {
+    transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
+  }
+}
+
+// Print background
+@media print {
+  .backgrounds {
+    background-color: $backgroundColor;
+  }
+}
+.reveal .controls {
+  color: var(--mint-green);
+  top: 0;
+  right: 0;
+  bottom: calc(0px + var(--r-controls-spacing)); //to account for footer
+  // bottom: 0;
+  left: 0;
+// }
+}
+@media screen and (min-width: 500px) {
+
+	.reveal-viewport {
+		--r-controls-spacing: 1.8em;
+	}
+
+	.reveal .controls[data-controls-layout="edges"] {
+		& {
+			top: 0;
+			right: 0;
+      bottom: calc(70px + var(--r-controls-spacing)); //to account for footer
+			// bottom: 0;
+			left: 0;
+		}
+
+		.navigate-left,
+		.navigate-right,
+		.navigate-up,
+		.navigate-down {
+			bottom: auto;
+			right: auto;
+		}
+
+		.navigate-left {
+			top: 50%;
+			left: var(--r-controls-spacing);
+			margin-top: -$controlArrowSize*0.5;
+		}
+
+		.navigate-right {
+			top: 50%;
+			right: var(--r-controls-spacing);
+			margin-top: -$controlArrowSize*0.5;
+		}
+
+		.navigate-up {
+			top: var(--r-controls-spacing);
+			left: 50%;
+			margin-left: -$controlArrowSize*0.5;
+		}
+
+		.navigate-down {
+			bottom: calc(var(--r-controls-spacing) - #{$controlArrowSpacing} + 0.3em);
+			left: 50%;
+			margin-left: -$controlArrowSize*0.5;
+		}
+	}
+
+}
+.reveal .controls .navigate-right.highlight{
+  animation: none;
+}
+
+
+.reveal {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	touch-action: pinch-zoom;
+}
+
+// Swiping on an embedded deck should not block page scrolling
+.reveal.embedded {
+	touch-action: pan-y;
+}
+
+.reveal .slides {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	margin: auto;
+	pointer-events: none;
+
+	overflow: visible;
+	z-index: 1;
+	text-align: center;
+	perspective: 600px;
+	perspective-origin: 50% 40%;
+}
+
+.reveal .slides>section {
+	perspective: 600px;
+}
+
+.reveal .slides>section,
+.reveal .slides>section>section {
+	display: none;
+	position: absolute;
+	width: 100%;
+	pointer-events: auto;
+
+	z-index: 10;
+	transform-style: flat;
+	transition: transform-origin 800ms cubic-bezier(0.260, 0.860, 0.440, 0.985),
+				transform 800ms cubic-bezier(0.260, 0.860, 0.440, 0.985),
+				visibility 800ms cubic-bezier(0.260, 0.860, 0.440, 0.985),
+				opacity 800ms cubic-bezier(0.260, 0.860, 0.440, 0.985);
+}
+
+// // Adjust the layout when there are no horizontal slides
+ .reveal:not(.has-horizontal-slides) .controls .navigate-up {
+	// right: $controlArrowSpacing;
+	// bottom: $controlArrowSpacing + $controlArrowSize;
+  bottom: 8.5em;
+  right: 1.4em;
+}
+.reveal:not(.has-horizontal-slides) .controls .navigate-down{
+  bottom: 3.5em;
+  right: 1.4em;
+}

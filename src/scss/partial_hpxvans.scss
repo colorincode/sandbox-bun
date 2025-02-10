@@ -1,0 +1,788 @@
+$browser-context: 16; // Default
+
+@function em($pixels, $context: $browser-context) {
+	@return calc($pixels / $context)em;
+}
+@function randomNum($min, $max) {
+	$rand: random();
+	$randomNum: $min + floor($rand * (($max - $min) + 1));
+
+	@return $randomNum;
+}
+$bem-block-prefix: 'sp19--hp-';
+$bem-element-prefix: '__';
+$bem-modifier-prefix: '--';
+
+/*container sizes*/
+
+$x-small: 640px;
+$break-small: 760px;
+$break-medium: 1024px;
+$x-large: 1200px;
+
+/* Breakpoint mixins */
+$phone-width: 540px;
+$tablet-width: 1024px;
+$desktop-width: 1200px;
+@mixin phone {
+	@media (max-width: #{$phone-width - 1px}) {
+		@content;
+	}
+}
+
+@mixin tablet {
+	@media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}) {
+		@content;
+	}
+}
+
+@mixin desktop {
+	@media (min-width: #{$desktop-width}) {
+		@content;
+	}
+}
+@mixin retina {
+	@media only screen and (-webkit-min-device-pixel-ratio: 2),
+		only screen and (min--moz-device-pixel-ratio: 2),
+		only screen and (-o-min-device-pixel-ratio: 2/1),
+		only screen and (min-device-pixel-ratio: 2),
+		only screen and (min-resolution: 192dpi),
+		only screen and (min-resolution: 2dppx) {
+		@content;
+	}
+}
+//$md-mobile: 'only screen and (max-width: ' + $break-small + ')';
+//$md-tablet: 'only screen and (max-width: ' + $$break-medium + ')';
+//$md-desktop: 'only screen and (min-width: ' + $x-large + ')';
+
+$body-text: "franklin-gothic-ext-comp-urw", sans-serif;
+
+$xlarge-headline-size: em(80);
+$headline-size: em(32);
+$large-size: em(24);
+$btn-text: em(20);
+$medium-size: em(16);
+$small-size: em(12);
+
+//colors
+$red: #ff0029;
+$grey: #c5c5c5;
+$slytheringreen: #14260e;
+$gryffmaroon: #81141f;
+$gryffyellow: #dfa753;
+$hufflepuffyellow: #dc992b;
+$ravenclawblue: #0a4e8b;
+$ravenclawsilver: #9d9fa2;
+$slytherinblack: #231f20;
+
+html[data-browser*='iPad']
+	html[data-browser*='iPod']
+	html[data-browser*='iPhone'] 
+    {
+	pointer-events: visibleFill;
+	cursor: pointer;
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  -webkit-tap-highlight-color: transparent;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+*:active {
+    pointer-events: visibleFill;
+	cursor: pointer;
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  -webkit-tap-highlight-color: transparent;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+body{
+	margin: 0;
+	padding: 0;
+}
+.cs--cic--copyright__wrapper {
+    margin: 0 auto;
+    place-content: center;
+    width: 100%;
+    background:#231f20;
+    color: #fff;
+    border: 2px solid #231f20;
+    font-size: 1rem;
+    font-weight: 900;
+    padding: 0.5rem 1rem;
+    text-align: center;
+}
+.cc--cic--copyrightlink {
+    color:$ravenclawblue;
+}
+.sp19--hp--signup__form--button {
+    background:#231f20;
+    color: #fff;
+    border: 2px solid #231f20;
+    font-size: 1rem;
+    font-weight: 900;
+    padding: 0.85rem 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.25rem;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+#gryffindor {
+
+	top:0;
+	left: 0;
+}
+#ravenclaw {
+	top: 0;
+	right: 0;
+}
+#slytherin {
+	bottom: 0;
+	left: 0;
+}
+#hufflepuff {
+	bottom: 0;
+	right: 0;
+}
+#gryffindor, #slytherin, #hufflepuff , #ravenclaw{
+	position: absolute;
+	z-index: 777;
+	width: 100%;
+    height: 100%;
+}
+// #hphouse--box--gryffindor, #hphouse--box--ravenclaw, #hphouse--box--slytherin, #hphouse--box--hufflepuff {
+// 	filter: url(#turbulence-gryffindor);
+// 	transition: filter 0.3s ease;
+//   }
+.hpfluidcontainer {
+	filter: url(#turbulence);
+	transition: filter 0.3s ease;
+  }
+  #ripple-canvas {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 10; /* Above quadrants, below signup form */
+	pointer-events: none; /* Allows clicks to pass through to elements below */
+  }
+  
+
+  
+  #hphouse--box--ravenclaw {
+	filter: url(#turbulence-ravenclaw);
+  }
+  
+  #hphouse--box--slytherin {
+	filter: url(#turbulence-slytherin);
+  }
+  
+  #hphouse--box--hufflepuff {
+	filter: url(#turbulence-hufflepuff);
+  }
+  
+#hphouse--box--gryffindor {
+	position: relative;
+	display: grid;
+	 z-index: 9;
+	height: 100%;
+	width: 100%;
+}
+#hphouse--box--ravenclaw {
+	position: relative;
+	display: grid;
+	z-index: 9;
+	height: 100%;
+	width: 100%;
+}
+#hphouse--box--hufflepuff {
+	position: relative;
+	display: grid;
+	z-index: 9;
+	height: 100%;
+	width: 100%;
+}
+#hphouse--box--slytherin {
+	position: relative;
+	display: grid;
+	z-index: 9;
+	height: 100%;
+	width: 100%;
+}
+
+  $gryffImg: '../../assets/gryffindor-pattern-colorized.png';
+  $slytherinImg: '../../assets/slytherin-pattern-colorized.png';
+  $ravenclawImg: '../../assets/fa19_harrypotter_signup_page_desktop_ravenclaw_patternshape_1005x605.png';
+  $hufflepuffImg: '../../assets/hufflepuff_patternshape_colorized.png';
+  .hpfluidcontainer {
+	background-position: center bottom;
+	background-repeat: no-repeat;
+	background-size: cover;
+  }
+  .hpfluidcontainer--ravenclaw {
+	background-image: url('../../assets/fa19_harrypotter_signup_page_desktop_ravenclaw_patternshape_1005x605.png');
+	background-position: center bottom;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+  .hpfluidcontainer--gryffindor {
+	background-image: url( $gryffImg);
+	background-position: center bottom;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+  .hpfluidcontainer--hufflepuff {
+	background-image: url( $hufflepuffImg);
+	background-position: center bottom;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+  .hpfluidcontainer--slytherin {
+	background-image: url( $slytherinImg);
+	background-position: center bottom;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+
+  .hide-filter {
+          
+        display: none;
+        visibility: hidden;
+        // transition: 1.8s all; 
+    
+}
+.show-filter {
+        
+        display: block;
+        visibility: visible;
+        // transition: 1.8s all; 
+    
+}
+//   .hpfluidcontainer #ripple {
+//     position: absolute;
+//     bottom: 0;
+//     width: 100%;
+//     height: 100%;
+//     filter: url('#turbulence');
+//     overflow: hidden;
+//   }
+
+//  #ripple {
+//     background-image: url($lakeImg);
+//     background-position: center bottom;
+//     background-repeat: no-repeat;
+//     background-size: cover;
+//   }
+  
+//   #hpfluidcontainer-none {
+//     display: none;
+//   }
+  
+//   #hpfluidcontainer-none.active {
+//     visibility: hidden;
+//   }
+  
+//   #hpfluidcontainer, #hpfluidcontainer.flipping {
+//     visibility: visible;
+//   }
+  
+// .spell {
+// visibility: hidden;
+// display: none;
+// }
+// // .reveal-spell .flipping {
+// //     visibility: visible;
+// // }
+// .reveal-spell-show {
+//     visibility: visible;
+//     display: grid;
+// }
+#spell--gryffindor , 
+#spell--hufflepuff , 
+#spell--ravenclaw , 
+#spell--slytherin {
+    visibility: hidden;
+    display: none;
+}
+  .hpfluidcontainer , .hpfluidcontainer #ripple {
+    position: absolute;
+    // width: 764px;
+    // height: 411px;
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .hpfluidcontainer--ravenclaw #ripple{
+            background-image: url($ravenclawImg);
+            background-position: center bottom;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            filter: url('#turbulence');
+            overflow: hidden;
+        }
+		.hpfluidcontainer--gryffindor #ripple{
+            background-image: url( $gryffImg);
+            background-position: center bottom;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            filter: url('#turbulence');
+            overflow: hidden;
+        }
+		.hpfluidcontainer--hufflepuff #ripple{
+            background-image: url( $hufflepuffImg);
+            background-position: center bottom;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            filter: url('#turbulence');
+            overflow: hidden;
+        }
+		.hpfluidcontainer--slytherin #ripple{
+            background-image: url( $slytherinImg);
+            background-position: center bottom;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            filter: url('#turbulence');
+            overflow: hidden;
+        }
+
+.sp19--hp--flex__wrapper {
+	background: #e9e9e9;
+	font-size: 1rem;
+	margin: 0 auto;
+	// min-height: 1400px;
+	height: 100dvh;
+	position: relative;
+	@include phone {
+		// min-height: 900px;
+	}
+	@include desktop {
+	}
+}
+.sp19--hp--form__wrapper {
+	background: url('https://images.vans.com/is/image/VansBrand/fa19_harrypotter_signup_page_background_copybox')
+		center center no-repeat;
+	background-size: cover;
+	display: grid;
+	// z-index: 3;
+	position: absolute;
+	margin: auto;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+    z-index:11;
+	text-align: center;
+	height: 50dvh;
+	width: 44dvw;
+    filter: drop-shadow(0 0 0.45rem black);
+	border:2px solid black;
+	@include phone {
+	width: 68dvw;
+	height: 42dvh;
+	}
+	@include retina {
+		max-height: 50%;
+	}
+	@include desktop {
+		height: 50dvh;
+		height: 40dvh;
+	}
+}
+.sp19--hp--signup__form--logo {
+	padding-bottom: 25px;
+	max-width: 50%;
+	@include phone {
+		width: 247px;
+		padding-top: 21px;
+	}
+	@include retina {
+		padding-top: 10px;
+		min-height: unset;
+	}
+	@include desktop {
+		//max-height: 50%;
+	}
+}
+.sp19--hp--signup__form {
+	margin: 0 auto;
+	flex: 1 1 auto;
+	padding-top: 50px;
+	//max-width: 56%;
+	@include phone {
+		max-height: 100%;
+		max-width: 100%;
+	}
+	@include retina {
+		padding-top: 10px;
+		max-height: 51%;
+		min-height: unset;
+	}
+	@include desktop {
+		max-height: 51%;
+	}
+}
+// .sp19--hp__iframe_wrapper {
+// }
+.sp19--hpcopyrightinfo__row {
+	justify-content: center;
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+	margin-top: -80px;
+}
+.hpcopytext {
+	font-weight: 500;
+	text-align: center;
+	@include phone {
+		font-weight: 500;
+		padding: 0 10px 0 10px;
+		font-size: 14px;
+		line-height: 1.3;
+	}
+}
+.hp--cpyright {
+	max-width: 52%;
+}
+.hp--cpyright-txt {
+	font-size: 8px;
+	text-align: left;
+	font-weight: 700;
+	padding-top: 24px;
+	padding-left: 15px;
+	@include phone {
+		font-size: 5px;
+		padding-left: 5px;
+	}
+}
+.sp19--hpcopyrightinfo--vans__col {
+	flex: 3;
+	vertical-align: text-bottom;
+	@include phone {
+		font-size: 5px;
+		flex: 2;
+		padding-left: 5px;
+	}
+}
+
+.sp19--hpcopyrightinfo--wizardry__col {
+	flex: 2;
+	//margin-top: -29px;
+	@include phone {
+		flex: 1;
+	}
+}
+
+.sp19--hp--flex__row {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	width: 100%;
+	height: 50vh;
+	@include phone {
+		width: 100%;
+		height: 50%;
+	}
+	@include retina {
+	}
+	@include desktop {
+	}
+}
+.sp19--hp--flex__col {
+	display: flex;
+	flex-direction: column;
+	flex-basis: 100%;
+	flex: 1;
+	min-height: 100%;
+}
+.sp19--hp--gryffindor {
+	// background: $gryffyellow
+	// 	url('../../assets/fa19_harrypotter_signup_page_desktop_gryffindor_patternshape_1005x605.jfif')
+	// 	center center repeat-x;
+    // background: $gryffyellow
+    // url('../../assets/gryffindor-pattern-colorized.png')
+    // center center repeat-x;
+    background: 
+	
+	linear-gradient(to right,
+	rgba($gryffyellow, 0.25), 
+	rgba($gryffyellow,0.25)
+  ),
+    url('../assets/gryffindor-pattern-colorized.png')
+    center center repeat-x;
+	background-blend-mode: difference;
+	background-size: cover;
+	// background-size: cover;
+	// background-origin: border-box;
+	@include phone {
+	}
+	@include retina {
+	}
+	@include desktop {
+	}
+	/*canvas {
+		background: url('https://images.vans.com/is/image/VansBrand/fa19_harrypotter_signup_page_shape_gryffindor?wid=323&fmt=png8-alpha')
+			center center no-repeat;
+	}*/
+}
+// #spellgryff {
+// 	display: none;
+// }
+// .sp19--hp--gryffindor:hover #spellgryff {
+// 	display: grid;
+// 	//animation: slit-out-vertical 3s ease-in both;
+// 	animation: fade-in-top 1.5s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+// 	animation-delay: 1.5s;
+// 	//font-size: #{randomNum(5, 10)}px;
+// 	/*animation-name: fade-in-top, slit-out-vertical;
+// 	animation-duration: 3s, 2s;
+// 	animation-delay: 0, 2.5s;
+// 	animation-iteration-count: 1;
+// 	animation-timing-function: ease-in, cubic-bezier(0.39, 0.575, 0.565, 1);
+// 	animation-fill-mode: both;*/
+// 	position: absolute;
+//     top:0;
+//     left:0;
+// 	//top: #{randomNum(5, 10)}px;
+// 	//left: #{randomNum(5, 10)}px;
+// 	max-height: 80px;
+// 	max-width: 40px;
+// }
+// #spellgryff:not(:hover){display: none;}
+.sp19--hp--slytherin {
+	background: 
+    linear-gradient(to right,
+      rgba($slytheringreen, 0.25), 
+      rgba($slytheringreen,0.25)
+    ),
+    url('../../assets/fa19_harrypotter_signup_page_desktop_slytherin_patternshape_1005x605-png.png') center top repeat-x;
+	background-size: cover;
+  background-blend-mode: difference;
+	@include phone {
+	}
+	@include retina {
+	}
+	@include desktop {
+	}
+	/*canvas {
+		background: url('https://images.vans.com/is/image/VansBrand/fa19_harrypotter_signup_page_shape_slytherin?wid=214&fmt=png8-alpha')
+			center center no-repeat;
+	}*/
+}
+
+// #spellslytherin {
+// 	display: none;
+// }
+// #spellslytherin {
+// 	display: block;
+// 	animation: slit-in-diagonal-1 1.45s ease-in-out both;
+// 	animation-delay: 1s;
+// 	position: absolute;
+// 	bottom: 15px;
+// 	right: 35px;
+// 	max-height: 100px;
+// 	max-width: 60px;
+// 	//animation-delay: 2s;
+// }
+
+.sp19--hp--ravenclaw {
+	background: 
+	linear-gradient(to right,
+	rgba($ravenclawblue, 0.425), 
+	rgba($ravenclawblue,0.425)
+  ),
+	
+		url('../../assets/fa19_harrypotter_signup_page_desktop_ravenclaw_patternshape_1005x605.png')
+		center center repeat-x;
+		background-size: cover;
+	background-blend-mode: difference;
+	@include phone {
+	}
+	@include retina {
+	}
+	@include desktop {
+	}
+	/*canvas {
+		background: url('https://images.vans.com/is/image/VansBrand/fa19_harrypotter_signup_page_shape_ravenclaw?wid=500&fmt=png8-alpha')
+			center center no-repeat;
+	}*/
+}
+// #spellravenclaw {
+// 	display: none;
+// }
+// .sp19--hp--ravenclaw:hover #spellravenclaw {
+// 	display: block;
+// 	animation: slide-in-elliptic-left-bck 1s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+// 		both;
+// 	animation-delay: 1s;
+// 	position: absolute;
+// 	bottom: 15px;
+// 	right: 35px;
+// 	max-height: 100px;
+// 	max-width: 60px;
+// 	//animation-delay: 2s;
+// }
+
+.sp19--hp--hufflepuff {
+	background:
+	linear-gradient(to right,
+	rgba($hufflepuffyellow, 0.225), 
+	rgba($hufflepuffyellow,0.225)
+  ),
+		url('../../assets/hufflepuff_patternshape_colorized.png')
+		center center repeat-x;
+		background-size: cover;
+		background-blend-mode: difference;
+	//animation: kenburns-bottom-right 5s ease-out both;
+	@include phone {
+	}
+	@include retina {
+	}
+	@include desktop {
+	}
+	/*canvas {
+		background: url('https://images.vans.com/is/image/VansBrand/fa19_harrypotter_signup_page_shape_hufflepuff?wid=294&fmt=png8-alpha')
+			center center no-repeat;
+	}*/
+}
+// #spellhufflepuff {
+// 	display: none;
+// }
+// .sp19--hp--hufflepuff:hover #spellhufflepuff {
+// 	display: block;
+// 	animation: slit-in-diagonal-1 1.45s ease-in-out both;
+// 	animation-delay: 1s;
+// 	position: absolute;
+// 	bottom: 35px;
+// 	right: 75px;
+// 	max-height: 100px;
+// 	max-width: 60px;
+// 	//animation-delay: 2s;
+// }
+/******* images and stuff   ******/
+.hp--hufflepuff--logo {
+	right: 17px;
+	z-index: 5;
+  	position: absolute;
+  	bottom: 2%;
+}
+.hp--slytherin--logo {
+	left: 17px;
+	z-index: 5;
+  	position: absolute;
+  	bottom: 2%;
+}
+.hp--gryffindor--logo {
+	left: 17px;
+	top: 11px;
+	position: absolute;
+    z-index: 8888;
+}
+.hp--ravenclaw--logo {
+	right: 17px;
+	top: 11px;
+	position: absolute;
+    z-index: 8888;
+}
+/*******   ******/
+
+/*******  ******/
+
+/******* gsap stuff ******/
+
+/******* keyframes  ******/
+@keyframes slit-in-diagonal-1 {
+	0% {
+		-webkit-transform: translateZ(-800px) rotate3d(1, 1, 0, 90deg);
+		transform: translateZ(-800px) rotate3d(1, 1, 0, 90deg);
+		-webkit-animation-timing-function: ease-in;
+		animation-timing-function: ease-in;
+		opacity: 0;
+	}
+	54% {
+		-webkit-transform: translateZ(-160px) rotate3d(1, 1, 0, 87deg);
+		transform: translateZ(-160px) rotate3d(1, 1, 0, 87deg);
+		-webkit-animation-timing-function: ease-in-out;
+		animation-timing-function: ease-in-out;
+		opacity: 1;
+	}
+	100% {
+		-webkit-transform: translateZ(0) rotate3d(1, 1, 0, 0);
+		transform: translateZ(0) rotate3d(1, 1, 0, 0);
+		-webkit-animation-timing-function: ease-out;
+		animation-timing-function: ease-out;
+	}
+}
+
+@keyframes fade-in-top {
+	0% {
+		-webkit-transform: translateY(-50px);
+		transform: translateY(-50px);
+		opacity: 0;
+	}
+	100% {
+		-webkit-transform: translateY(0);
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
+@keyframes slide-in-blurred-top {
+	0% {
+		-webkit-transform: translateY(-1000px) scaleY(2.5) scaleX(0.2);
+		transform: translateY(-1000px) scaleY(2.5) scaleX(0.2);
+		-webkit-transform-origin: 50% 0%;
+		transform-origin: 50% 0%;
+		-webkit-filter: blur(40px);
+		filter: blur(40px);
+		opacity: 0;
+	}
+	100% {
+		-webkit-transform: translateY(0) scaleY(1) scaleX(1);
+		transform: translateY(0) scaleY(1) scaleX(1);
+		-webkit-transform-origin: 50% 50%;
+		transform-origin: 50% 50%;
+		-webkit-filter: blur(0);
+		filter: blur(0);
+		opacity: 1;
+	}
+}
+
+@keyframes slide-in-elliptic-left-bck {
+	0% {
+		-webkit-transform: translateX(-800px) rotateY(-30deg) scale(6.5);
+		transform: translateX(-800px) rotateY(-30deg) scale(6.5);
+		-webkit-transform-origin: 200% 50%;
+		transform-origin: 200% 50%;
+		opacity: 0;
+	}
+	100% {
+		-webkit-transform: translateX(0) rotateY(0) scale(1);
+		transform: translateX(0) rotateY(0) scale(1);
+		-webkit-transform-origin: -600px 50%;
+		transform-origin: -600px 50%;
+		opacity: 1;
+	}
+}

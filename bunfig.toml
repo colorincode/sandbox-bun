@@ -1,0 +1,8 @@
+preload = ["./bun_preload.ts"]
+[install]
+saveLockfileTo = "bun.lock"
+
+[test]
+runner = "bun:test"
+[lint]
+runner = "biome"
