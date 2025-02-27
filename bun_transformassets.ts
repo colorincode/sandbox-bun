@@ -1,13 +1,17 @@
 import sharp from "sharp";
 import { readdir, mkdir, stat , copyFile, watch} from "fs/promises";
 import { join, dirname, extname } from "path";
+import { clearLine, cursorTo } from 'readline';
 
-
+let skippedFilesCount = 0;
 const processedFiles = new Set<string>();
 
+
 export async function transformAssets(inputDir: string, outputDir: string, force: boolean = false) {
+  skippedFilesCount = 0;
   await processAllAssets(inputDir, outputDir, force);
   // watchAssets(inputDir, outputDir);
+  console.log();
 }
 
 async function processAllAssets(inputDir: string, outputDir: string, force: boolean) {
@@ -37,7 +41,9 @@ async function processAllAssets(inputDir: string, outputDir: string, force: bool
 }
 
 async function processAsset(inputPath: string, outputPath: string, force: boolean) {
-  if (!force && processedFiles.has(inputPath)) {
+  if (!force && await shouldProcessFile(inputPath, outputPath) === false) {
+    skippedFilesCount++;
+    updateSkippedAssetsOutput();
     return;
   }
 
@@ -47,19 +53,58 @@ async function processAsset(inputPath: string, outputPath: string, force: boolea
 
   try {
     if (/\.(png|jpg|jpeg|webp)$/i.test(fileExt)) {
-      await sharp(inputPath)
-        .webp({ quality: 80 })
-        .toFile(outputPath.replace(/\.[^.]+$/, '.webp'));
-      console.log(`Optimized: ${inputPath} -> ${outputPath}`);
+      let originalPath = inputPath;
+      let imgFile = Bun.file(inputPath);
+      const inputBuffer = await imgFile.arrayBuffer();
+      const outputBuffer = Buffer.from(inputBuffer);
+      const optimized = await sharp(inputBuffer)
+        .keepIccProfile()
+        .toBuffer({resolveWithObject: true});
+      
+      if (optimized.info.size < outputBuffer.length) {
+        await Bun.write(outputPath, outputBuffer);
+        console.log(`Optimized: ${inputPath} -> ${outputPath}`);
+      } else {
+        await copyFile(inputPath, outputPath);
+        console.log(`Copied (no size reduction): ${inputPath} -> ${outputPath}`);
+      }
     } else {
       await copyFile(inputPath, outputPath);
       console.log(`Copied: ${inputPath} -> ${outputPath}`);
     }
     processedFiles.add(inputPath);
+  
   } catch (error) {
-    console.error(`Failed to process asset: ${inputPath}`, error);
+ console.error({
+      message: `Failed to process asset: ${inputPath}`,
+      error: error,
+    });
   }
 }
+
+function updateSkippedAssetsOutput() {
+  clearLine(process.stdout, 0);
+  cursorTo(process.stdout, 0);
+  process.stdout.write(`Skipped assets [${skippedFilesCount}]`);
+}
+
+
+async function shouldProcessFile(inputPath: string, outputPath: string): Promise<boolean> {
+  try {
+    const inputStat = await stat(inputPath);
+    const outputStat = await stat(outputPath);
+
+    // If the input file is newer than the output file, we should process it
+    return inputStat.mtime > outputStat.mtime;
+  } catch (error: any) {
+    // If the output file doesn't exist (ENOENT error), we should process the input file
+    if (error.code === 'ENOENT') {
+      return true;
+    }
+    throw error;
+  }
+}
+
 
 // function watchAssets(inputDir: string, outputDir: string) {
 //   const watcher = watch(inputDir, { recursive: true });

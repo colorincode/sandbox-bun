@@ -2,9 +2,9 @@ import { serve } from "bun";
 import { watch } from "fs";
 import { join } from "path";
 import { buildProject } from "./bun_build";
+import type { ServerWebSocket } from "bun";
 
-
-const clients = new Set<WebSocket>();
+const clients = new Set<ServerWebSocket<unknown>>();
 let isBuilding = false;
 
 type DisposableTimer = Timer & { [Symbol.dispose](): void };
